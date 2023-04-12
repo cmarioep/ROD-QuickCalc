@@ -1,3 +1,6 @@
+import { wireData } from './wireData.js';
+
+
 const sinFP = {
     1: 0,
     0.95: 0.31,
@@ -6,12 +9,52 @@ const sinFP = {
 }
 
 
+const getResistance = (material, conduit, awg) => {
 
-const getEffectiveImpedance = (awg, fp) => {
+    if (material === 'Cu' && conduit === 'PVC') {
+        const resistance = wireData.resistanceCuOnPVC[awg];
+        return resistance;
+    }
+
+    if (material === 'Cu' && conduit === 'ACERO') {
+        const resistance = wireData.resistanceCuOnAcero[awg];
+        return resistance;
+    }
+
+    if (material === 'Al' && conduit === 'PVC') {
+        const resistance = wireData.resistanceALOnPVC[awg];
+        return resistance;
+    }
+
+    if (material === 'Al' && conduit === 'ACERO') {
+        const resistance = wireData.resistanceALOnAcero[awg];
+        return resistance;
+    }
+}
+
+
+const getInductance = (conduit, awg) => {
+
+    if (conduit === 'PVC') {
+        const inductance = wireData.inductanceOnPVC[awg];
+        return inductance;
+    }
+
+    if (conduit === 'ACERO') {
+        const inductance = wireData.inductanceOnAcero[awg];
+        return inductance;
+    }
+
+}
+
+
+const getEffectiveImpedance = (material, conduit, awg, fp) => {
 
     const sin = sinFP[fp];
-    const resistance = resistanceAWG[awg];
-    const inductance = inductanceAWG[awg];
+
+    const resistance = getResistance(material, conduit, awg);
+
+    const inductance = getInductance(conduit, awg);
 
     const effectiveImpedance = (resistance * fp) + (inductance * sin);
 
@@ -21,7 +64,7 @@ const getEffectiveImpedance = (awg, fp) => {
 
 
 
-export const getVoltageDrop = (type, long, voltage, loadCurrent, awg, fp) => {
+export const getVoltageDrop = (type, material, conduit, voltage, fp, loadCurrent, awg, long) => {
 
     let deltaDrop = getEffectiveImpedance(awg, fp) * (long / 1000) * loadCurrent;
 
