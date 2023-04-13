@@ -66,7 +66,13 @@ const getEffectiveImpedance = (material, conduit, awg, fp) => {
 
 export const getVoltageDrop = (type, material, conduit, voltage, fp, loadCurrent, awg, long) => {
 
-    let deltaDrop = getEffectiveImpedance(awg, fp) * (long / 1000) * loadCurrent;
+    voltage = Number(voltage);
+    fp = Number(fp);
+    loadCurrent = Number(loadCurrent);
+    awg = Number(awg);
+    long = Number(long);
+
+    let deltaDrop = getEffectiveImpedance(material, conduit, awg, fp) * (long / 1000) * loadCurrent;
 
 
     if (type === 'trifasico') {
