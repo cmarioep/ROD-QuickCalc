@@ -44,14 +44,9 @@ export const VoltageDrop = () => {
                 </label>
             </div>
 
-            <label htmlFor="fp">FP:</label>
-            <select id="fp" name="fp" onChange={onInputChange}>
-                <option value=""></option>
-                <option value="1">1</option>
-                <option value="0.95">0.95</option>
-                <option value="0.9">0.9</option>
-                <option value="0.85">0.85</option>
-            </select>
+
+
+
 
 
             <label htmlFor="voltage">Tensión:</label>
@@ -64,42 +59,86 @@ export const VoltageDrop = () => {
                 value={voltage}
             />
 
-            <label htmlFor="loadCurrent">Carga:</label>
-            <input
-                type="number"
-                id="loadCurrent"
-                name="loadCurrent"
-                autoComplete='off'
-                onChange={onInputChange}
-                value={loadCurrent}
-            />
+            <div>
+                <label htmlFor="loadCurrent">Carga:</label>
+                <input
+                    type="number"
+                    id="loadCurrent"
+                    name="loadCurrent"
+                    autoComplete='off'
+                    onChange={onInputChange}
+                    value={loadCurrent}
+                />
+                <label htmlFor="fp">FP:</label>
+                <select id="fp" name="fp" onChange={onInputChange}>
+                    <option value=""></option>
+                    <option value="1">1</option>
+                    <option value="0.95">0.95</option>
+                    <option value="0.9">0.9</option>
+                    <option value="0.85">0.85</option>
+                </select>
+            </div>
 
 
-            <label htmlFor="awg">AWG:</label>
-            <select id="awg" name="awg" onChange={onInputChange}>
-                <option value=""></option>
-                <option value="2">2</option>
-                <option value="4">4</option>
-                <option value="6">6</option>
-                <option value="8">8</option>
-                <option value="10">10</option>
-                <option value="12">12</option>
-                <option value="14">14</option>
-            </select>
 
-            <label htmlFor="awg">Material:</label>
-            <select id="awg" name="material" onChange={onInputChange}>
-                <option value=""></option>
-                <option value="Cu">Cobre</option>
-                <option value="Al">Aluminio</option>
-            </select>
+            <div>
+                <div>
+                    <p>Material:</p>
+                    <label htmlFor="material">Cobre
+                        <input
+                            type="radio"
+                            value="Cu"
+                            name="material"
+                            checked={material === "Cu"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                    <label htmlFor="material">Aluminio
+                        <input
+                            type="radio"
+                            value="Al"
+                            name="material"
+                            checked={material === "Al"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                </div>
+                <label htmlFor="awg">AWG:</label>
+                <select id="awg" name="awg" onChange={onInputChange}>
+                    <option value=""></option>
+                    <option value="2">2</option>
+                    <option value="4">4</option>
+                    <option value="6">6</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                </select>
+            </div>
 
-            <label htmlFor="awg">Canalización:</label>
-            <select id="awg" name="conduit" onChange={onInputChange}>
-                <option value=""></option>
-                <option value="PVC">PVC</option>
-                <option value="ACERO">ACERO</option>
-            </select>
+
+            <div>
+                    <p>Canalización:</p>
+                    <label htmlFor="conduit">PVC
+                        <input
+                            type="radio"
+                            value="PVC"
+                            name="conduit"
+                            checked={conduit === "PVC"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                    <label htmlFor="conduit">Metalica
+                        <input
+                            type="radio"
+                            value="ACERO"
+                            name="conduit"
+                            checked={conduit === "ACERO"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                </div>
+
 
 
             <label htmlFor="long">Longitud:</label>
