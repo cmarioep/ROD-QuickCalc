@@ -22,13 +22,27 @@ export const VoltageDrop = () => {
 
         <form className="formulario">
 
-            <label htmlFor="type">Tipo:</label>
-            <select id="type" name="type" onChange={onInputChange}>
-                <option value=""></option>
-                <option value="trifasico">Trifásico</option>
-                <option value="monofasico">Monofásico</option>
-            </select>
-
+            <div>
+                <p>Tipo:</p>
+                <label htmlFor="type">Monofásico
+                    <input
+                        type="radio"
+                        value="monofasico"
+                        name="type"
+                        checked={type === "monofasico"}
+                        onChange={onInputChange}
+                    />
+                </label>
+                <label htmlFor="type">Trifásico
+                    <input
+                        type="radio"
+                        value="trifasico"
+                        name="type"
+                        checked={type === "trifasico"}
+                        onChange={onInputChange}
+                    />
+                </label>
+            </div>
 
             <label htmlFor="fp">FP:</label>
             <select id="fp" name="fp" onChange={onInputChange}>
