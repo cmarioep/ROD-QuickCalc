@@ -7,7 +7,6 @@ function App() {
 
   return (
     <div className="App">
-      <h1>Factura Siigo</h1>
       <VoltageDrop />
     </div>
   )

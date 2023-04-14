@@ -20,7 +20,7 @@ export const VoltageDrop = () => {
 
     return (
 
-        <div className="formulario">
+        <form className="formulario">
 
             <label htmlFor="type">Tipo:</label>
             <select id="type" name="type" onChange={onInputChange}>
@@ -100,7 +100,7 @@ export const VoltageDrop = () => {
 
             <h3>{`%Reg: ${voltageDrop}`}</h3>
 
-        </div>
+        </form>
 
     );
 };
