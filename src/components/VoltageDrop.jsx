@@ -9,12 +9,12 @@ import { getVoltageDrop } from '../utils/getVoltageDrop';
 
 export const VoltageDrop = () => {
 
-    const { type, material, conduit, voltage, fp, loadCurrent, awg, long, formState, onInputChange, onResetForm } = useForm({ type: '', material: '', conduit: '', voltage: '', fp: '', loadCurrent: '', awg: '', long: '' });
+    const { type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long, formState, onInputChange, onResetForm } = useForm({ type: '', material: '', conduit: '', voltage: '', fp: '', loadType:'', loadCurrent: '', awg: '', long: '' });
 
     const [voltageDrop, setVoltageDrop] = useState('')
 
     useEffect(() => {
-        setVoltageDrop(getVoltageDrop(type, material, conduit, voltage, fp, loadCurrent, awg, long))
+        setVoltageDrop(getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long))
         console.log(formState)
     }, [formState])
 
@@ -45,10 +45,6 @@ export const VoltageDrop = () => {
             </div>
 
 
-
-
-
-
             <label htmlFor="voltage">Tensión:</label>
             <input
                 type="number"
@@ -58,6 +54,28 @@ export const VoltageDrop = () => {
                 onChange={onInputChange}
                 value={voltage}
             />
+
+            <div>
+                <p>Carga en:</p>
+                <label htmlFor="type">kVA
+                    <input
+                        type="radio"
+                        value="kva"
+                        name="loadType"
+                        checked={loadType === "kva"}
+                        onChange={onInputChange}
+                    />
+                </label>
+                <label htmlFor="type">Amperrios
+                    <input
+                        type="radio"
+                        value="amperios"
+                        name="loadType"
+                        checked={loadType === "amperios"}
+                        onChange={onInputChange}
+                    />
+                </label>
+            </div>
 
             <div>
                 <label htmlFor="loadCurrent">Carga:</label>
@@ -118,26 +136,26 @@ export const VoltageDrop = () => {
 
 
             <div>
-                    <p>Canalización:</p>
-                    <label htmlFor="conduit">PVC
-                        <input
-                            type="radio"
-                            value="PVC"
-                            name="conduit"
-                            checked={conduit === "PVC"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                    <label htmlFor="conduit">Metalica
-                        <input
-                            type="radio"
-                            value="ACERO"
-                            name="conduit"
-                            checked={conduit === "ACERO"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                </div>
+                <p>Canalización:</p>
+                <label htmlFor="conduit">PVC
+                    <input
+                        type="radio"
+                        value="PVC"
+                        name="conduit"
+                        checked={conduit === "PVC"}
+                        onChange={onInputChange}
+                    />
+                </label>
+                <label htmlFor="conduit">Metalica
+                    <input
+                        type="radio"
+                        value="ACERO"
+                        name="conduit"
+                        checked={conduit === "ACERO"}
+                        onChange={onInputChange}
+                    />
+                </label>
+            </div>
 
 
 
