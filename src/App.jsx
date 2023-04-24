@@ -1,7 +1,5 @@
 import { VoltageDrop } from './components/VoltageDrop';
 
-import './App.css';
-
 
 function App() {
 
