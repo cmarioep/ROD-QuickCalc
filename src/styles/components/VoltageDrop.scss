@@ -19,6 +19,8 @@ $radio-checked-color: #007bff;
 p {
     width: 100%;
     padding: 0.25rem;
+    padding-left: 0;
+    font-size: 0.9rem;
     text-align: left;
     font-weight: bold;
     // border: 1px solid seagreen;
@@ -37,6 +39,8 @@ div {
     label {
         width: 50%;
         padding: 0.5rem;
+
+        font-size: 0.8rem;
         border: 1px solid #007bff;
     }
 
