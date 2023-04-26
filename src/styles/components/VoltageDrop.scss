@@ -5,6 +5,7 @@ $radio-checked-color: #007bff;
 .formulario {
     width: 95%;
     max-width: 420px;
+    height: 100vh;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -16,42 +17,33 @@ $radio-checked-color: #007bff;
     background-color: #FFFFFF;
 
     &__container {
+        width: 100%;
+        margin-bottom: 1rem;
         border-bottom: 1px solid grey;
 
         p {
+            width: 40%;
             font-size: 1.2rem;
             font-weight: bold;
-            margin-bottom: 0.5rem;
         }
     }
 }
 
-p {
-    width: 100%;
-    padding: 0.25rem;
-    padding-left: 0;
-    font-size: 0.9rem;
-    text-align: left;
-    font-weight: bold;
+.system-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 0.5rem;
 }
-
-div {
-    width: 100%;
-    margin-bottom: 1rem;
-}
-
 
 .radio-input {
     display: flex;
     width: 100%;
-    border: 1px solid red;
 
     label {
         width: 50%;
         padding: 0.5rem;
-
         font-size: 0.8rem;
-        border: 1px solid #17945a;
+        text-align: center;
     }
 
     input[type="radio"] {
@@ -60,24 +52,23 @@ div {
         cursor: pointer;
         width: 1.2em;
         height: 1.2em;
-        border: 2px solid $radio-border-color;
         border-radius: 50%;
-        background-color: $radio-background-color;
     }
 }
 
 .label-input {
     display: flex;
+    align-items: center;
     width: 100%;
-    border: 1px solid rebeccapurple;
+    margin-bottom: 1rem;
 
     label {
         width: 50%;
         padding: 0.5rem;
 
+        text-align: center;
         font-size: 0.8rem;
         font-weight: bold;
-        border: 1px solid #007bff;
     }
 
     input[type="number"] {

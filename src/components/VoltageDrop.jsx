@@ -24,26 +24,28 @@ export const VoltageDrop = () => {
 
             <div className="formulario__container">
 
-                <p>Sistema:</p>
-                <div className='radio-input'>
-                    <label htmlFor="type">Monofásico
-                        <input
-                            type="radio"
-                            value="monofasico"
-                            name="type"
-                            checked={type === "monofasico"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                    <label htmlFor="type">Trifásico
-                        <input
-                            type="radio"
-                            value="trifasico"
-                            name="type"
-                            checked={type === "trifasico"}
-                            onChange={onInputChange}
-                        />
-                    </label>
+                <div className='system-options'>
+                    <p>Sistema:</p>
+                    <div className='radio-input'>
+                        <label htmlFor="type">Monofásico
+                            <input
+                                type="radio"
+                                value="monofasico"
+                                name="type"
+                                checked={type === "monofasico"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="type">Trifásico
+                            <input
+                                type="radio"
+                                value="trifasico"
+                                name="type"
+                                checked={type === "trifasico"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
                 </div>
 
                 <div className="label-input">
@@ -62,27 +64,29 @@ export const VoltageDrop = () => {
             </div>
 
             <div className="formulario__container">
-                <p>Carga:</p>
 
-                <div className="radio-input">
-                    <label htmlFor="type">kVA
-                        <input
-                            type="radio"
-                            value="kva"
-                            name="loadType"
-                            checked={loadType === "kva"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                    <label htmlFor="type">Amperios
-                        <input
-                            type="radio"
-                            value="amperios"
-                            name="loadType"
-                            checked={loadType === "amperios"}
-                            onChange={onInputChange}
-                        />
-                    </label>
+                <div className="system-options">
+                    <p>Carga:</p>
+                    <div className="radio-input">
+                        <label htmlFor="type">kVA
+                            <input
+                                type="radio"
+                                value="kva"
+                                name="loadType"
+                                checked={loadType === "kva"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="type">Amperios
+                            <input
+                                type="radio"
+                                value="amperios"
+                                name="loadType"
+                                checked={loadType === "amperios"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
                 </div>
 
                 <div className="label-input">
@@ -113,7 +117,30 @@ export const VoltageDrop = () => {
 
 
             <div className="formulario__container">
-                <p>Alimentador:</p>
+
+                <div className="system-options">
+                    <p>Alimentador:</p>
+                    <div className="radio-input">
+                        <label htmlFor="material">Cobre
+                            <input
+                                type="radio"
+                                value="Cu"
+                                name="material"
+                                checked={material === "Cu"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="material">Aluminio
+                            <input
+                                type="radio"
+                                value="Al"
+                                name="material"
+                                checked={material === "Al"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
+                </div>
 
                 <div className="label-input">
                     <label htmlFor="awg">AWG:</label>
@@ -129,48 +156,28 @@ export const VoltageDrop = () => {
                     </select>
                 </div>
 
-                <div className="radio-input">
-                    <label htmlFor="material">Cobre
-                        <input
-                            type="radio"
-                            value="Cu"
-                            name="material"
-                            checked={material === "Cu"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                    <label htmlFor="material">Aluminio
-                        <input
-                            type="radio"
-                            value="Al"
-                            name="material"
-                            checked={material === "Al"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                </div>
-
-                <p>Canalización:</p>
-                <div className='radio-input'>
-                    <label htmlFor="conduit">PVC
-                        <input
-                            type="radio"
-                            value="PVC"
-                            name="conduit"
-                            checked={conduit === "PVC"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-
-                    <label htmlFor="conduit">Metalica
-                        <input
-                            type="radio"
-                            value="ACERO"
-                            name="conduit"
-                            checked={conduit === "ACERO"}
-                            onChange={onInputChange}
-                        />
-                    </label>
+                <div className="system-options">
+                    <p>Canalización:</p>
+                    <div className='radio-input'>
+                        <label htmlFor="conduit">PVC
+                            <input
+                                type="radio"
+                                value="PVC"
+                                name="conduit"
+                                checked={conduit === "PVC"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="conduit">Metalica
+                            <input
+                                type="radio"
+                                value="ACERO"
+                                name="conduit"
+                                checked={conduit === "ACERO"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
                 </div>
 
             </div>
