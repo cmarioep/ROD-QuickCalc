@@ -195,7 +195,7 @@ export const VoltageDrop = () => {
                 />
             </div>
 
-            <h3>{voltageDrop ? `%Reg: ${voltageDrop}` : null}</h3>
+            <h3 className='system-result'>{voltageDrop ? `%Reg: ${voltageDrop}` : null}</h3>
 
         </form>
 

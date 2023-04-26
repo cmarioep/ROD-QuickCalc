@@ -18,7 +18,7 @@ $radio-checked-color: #007bff;
 
     &__container {
         width: 100%;
-        margin-bottom: 1rem;
+        margin-bottom: 2rem;
         border-bottom: 1px solid grey;
 
         p {
@@ -32,7 +32,12 @@ $radio-checked-color: #007bff;
 .system-options {
     display: flex;
     align-items: center;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.8rem;
+
+    p {
+        color: rgb(26, 109, 44)
+    }
+
 }
 
 .radio-input {
@@ -66,7 +71,7 @@ $radio-checked-color: #007bff;
         width: 50%;
         padding: 0.5rem;
 
-        text-align: center;
+        text-align: right;
         font-size: 0.8rem;
         font-weight: bold;
     }
@@ -84,4 +89,14 @@ $radio-checked-color: #007bff;
         border-radius: 5px;
         text-align: center;
     }
+}
+
+.system-result {
+    width: 100%;
+    margin: 1rem 0;
+    padding: 0.8rem;
+    border: 1px solid grey;
+    border-radius: 5px;
+    text-align: center;
+    color: rgb(26, 109, 44);
 }
