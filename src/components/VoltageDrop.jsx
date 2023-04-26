@@ -63,26 +63,6 @@ export const VoltageDrop = () => {
 
             <div className="formulario__container">
                 <p>Carga:</p>
-                <div>
-                    <label htmlFor="loadCurrent">Carga:</label>
-                    <input
-                        type="number"
-                        id="loadCurrent"
-                        name="loadCurrent"
-                        autoComplete='off'
-                        placeholder='kVA o Amperios'
-                        value={loadCurrent}
-                        onChange={onInputChange}
-                    />
-                    <label htmlFor="fp">FP:</label>
-                    <select id="fp" name="fp" onChange={onInputChange}>
-                        <option value=""></option>
-                        <option value="1">1</option>
-                        <option value="0.95">0.95</option>
-                        <option value="0.9">0.9</option>
-                        <option value="0.85">0.85</option>
-                    </select>
-                </div>
 
                 <div className="radio-input">
                     <label htmlFor="type">kVA
@@ -104,6 +84,31 @@ export const VoltageDrop = () => {
                         />
                     </label>
                 </div>
+
+                <div className="label-input">
+                    <label htmlFor="loadCurrent">Carga:</label>
+                    <input
+                        type="number"
+                        id="loadCurrent"
+                        name="loadCurrent"
+                        autoComplete='off'
+                        placeholder='kVA o Amperios'
+                        value={loadCurrent}
+                        onChange={onInputChange}
+                    />
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="fp">FP:</label>
+                    <select id="fp" name="fp" onChange={onInputChange}>
+                        <option value=""></option>
+                        <option value="1">1</option>
+                        <option value="0.95">0.95</option>
+                        <option value="0.9">0.9</option>
+                        <option value="0.85">0.85</option>
+                    </select>
+                </div>
+
             </div>
 
 
@@ -122,6 +127,27 @@ export const VoltageDrop = () => {
                         <option value="12">12</option>
                         <option value="14">14</option>
                     </select>
+                </div>
+
+                <div className="radio-input">
+                    <label htmlFor="material">Cobre
+                        <input
+                            type="radio"
+                            value="Cu"
+                            name="material"
+                            checked={material === "Cu"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                    <label htmlFor="material">Aluminio
+                        <input
+                            type="radio"
+                            value="Al"
+                            name="material"
+                            checked={material === "Al"}
+                            onChange={onInputChange}
+                        />
+                    </label>
                 </div>
 
                 <p>Canalización:</p>
@@ -147,26 +173,6 @@ export const VoltageDrop = () => {
                     </label>
                 </div>
 
-                <div className="radio-input">
-                    <label htmlFor="material">Cobre
-                        <input
-                            type="radio"
-                            value="Cu"
-                            name="material"
-                            checked={material === "Cu"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                    <label htmlFor="material">Aluminio
-                        <input
-                            type="radio"
-                            value="Al"
-                            name="material"
-                            checked={material === "Al"}
-                            onChange={onInputChange}
-                        />
-                    </label>
-                </div>
             </div>
 
             <div className="label-input">
