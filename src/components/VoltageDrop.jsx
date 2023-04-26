@@ -22,39 +22,44 @@ export const VoltageDrop = () => {
 
         <form className="formulario">
 
-            <p>Sistema:</p>
-            <div className='group-container'>
-                <label htmlFor="type">Monofásico
-                    <input
-                        type="radio"
-                        value="monofasico"
-                        name="type"
-                        checked={type === "monofasico"}
-                        onChange={onInputChange}
-                    />
-                </label>
-                <label htmlFor="type">Trifásico
-                    <input
-                        type="radio"
-                        value="trifasico"
-                        name="type"
-                        checked={type === "trifasico"}
-                        onChange={onInputChange}
-                    />
-                </label>
-            </div>
+            <div className="formulario__system">
 
-            <label htmlFor="voltage">Tensión:
-                <input
-                    type="number"
-                    id="voltage"
-                    name="voltage"
-                    autoComplete='off'
-                    placeholder='Voltios'
-                    value={voltage}
-                    onChange={onInputChange}
-                />
-            </label>
+                <p>Sistema:</p>
+                <div className='radio-input'>
+                    <label htmlFor="type">Monofásico
+                        <input
+                            type="radio"
+                            value="monofasico"
+                            name="type"
+                            checked={type === "monofasico"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                    <label htmlFor="type">Trifásico
+                        <input
+                            type="radio"
+                            value="trifasico"
+                            name="type"
+                            checked={type === "trifasico"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                </div>
+
+                <div className="number-input">
+                    <label htmlFor="voltage">Tensión:</label>
+                    <input
+                        type="number"
+                        id="voltage"
+                        name="voltage"
+                        autoComplete='off'
+                        placeholder='Voltios'
+                        value={voltage}
+                        onChange={onInputChange}
+                    />
+                </div>
+
+            </div>
 
             <div>
                 <p>Carga:</p>
@@ -79,7 +84,7 @@ export const VoltageDrop = () => {
                     </select>
                 </div>
 
-                <div className="group-container">
+                <div className="radio-input">
                     <label htmlFor="type">kVA
                         <input
                             type="radio"
@@ -121,7 +126,7 @@ export const VoltageDrop = () => {
                     </select>
 
                     <p>Canalización:</p>
-                    <div className='group-container'>
+                    <div className='radio-input'>
                         <label htmlFor="conduit">PVC
                             <input
                                 type="radio"
@@ -143,7 +148,7 @@ export const VoltageDrop = () => {
                         </label>
                     </div>
 
-                    <div className="group-container">
+                    <div className="radio-input">
                         <label htmlFor="material">Cobre
                             <input
                                 type="radio"
