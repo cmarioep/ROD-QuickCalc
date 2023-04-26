@@ -22,7 +22,7 @@ export const VoltageDrop = () => {
 
         <form className="formulario">
 
-            <div className="formulario__system">
+            <div className="formulario__container">
 
                 <p>Sistema:</p>
                 <div className='radio-input'>
@@ -46,7 +46,7 @@ export const VoltageDrop = () => {
                     </label>
                 </div>
 
-                <div className="number-input">
+                <div className="label-input">
                     <label htmlFor="voltage">Tensión:</label>
                     <input
                         type="number"
@@ -107,12 +107,10 @@ export const VoltageDrop = () => {
             </div>
 
 
+            <div className="formulario__container">
+                <p>Alimentador:</p>
 
-
-            <div>
-                <div>
-                    <p>Alimentador:</p>
-
+                <div className="label-input">
                     <label htmlFor="awg">AWG:</label>
                     <select id="awg" name="awg" onChange={onInputChange}>
                         <option value=""></option>
@@ -124,54 +122,55 @@ export const VoltageDrop = () => {
                         <option value="12">12</option>
                         <option value="14">14</option>
                     </select>
-
-                    <p>Canalización:</p>
-                    <div className='radio-input'>
-                        <label htmlFor="conduit">PVC
-                            <input
-                                type="radio"
-                                value="PVC"
-                                name="conduit"
-                                checked={conduit === "PVC"}
-                                onChange={onInputChange}
-                            />
-                        </label>
-
-                        <label htmlFor="conduit">Metalica
-                            <input
-                                type="radio"
-                                value="ACERO"
-                                name="conduit"
-                                checked={conduit === "ACERO"}
-                                onChange={onInputChange}
-                            />
-                        </label>
-                    </div>
-
-                    <div className="radio-input">
-                        <label htmlFor="material">Cobre
-                            <input
-                                type="radio"
-                                value="Cu"
-                                name="material"
-                                checked={material === "Cu"}
-                                onChange={onInputChange}
-                            />
-                        </label>
-                        <label htmlFor="material">Aluminio
-                            <input
-                                type="radio"
-                                value="Al"
-                                name="material"
-                                checked={material === "Al"}
-                                onChange={onInputChange}
-                            />
-                        </label>
-                    </div>
                 </div>
 
+                <p>Canalización:</p>
+                <div className='radio-input'>
+                    <label htmlFor="conduit">PVC
+                        <input
+                            type="radio"
+                            value="PVC"
+                            name="conduit"
+                            checked={conduit === "PVC"}
+                            onChange={onInputChange}
+                        />
+                    </label>
 
+                    <label htmlFor="conduit">Metalica
+                        <input
+                            type="radio"
+                            value="ACERO"
+                            name="conduit"
+                            checked={conduit === "ACERO"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                </div>
+
+                <div className="radio-input">
+                    <label htmlFor="material">Cobre
+                        <input
+                            type="radio"
+                            value="Cu"
+                            name="material"
+                            checked={material === "Cu"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                    <label htmlFor="material">Aluminio
+                        <input
+                            type="radio"
+                            value="Al"
+                            name="material"
+                            checked={material === "Al"}
+                            onChange={onInputChange}
+                        />
+                    </label>
+                </div>
             </div>
+
+
+
 
 
 

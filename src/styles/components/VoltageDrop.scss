@@ -15,7 +15,7 @@ $radio-checked-color: #007bff;
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
     background-color: #FFFFFF;
 
-    &__system {
+    &__container {
         border-bottom: 1px solid grey;
 
         p {
@@ -33,7 +33,6 @@ p {
     font-size: 0.9rem;
     text-align: left;
     font-weight: bold;
-    // border: 1px solid seagreen;
 }
 
 div {
@@ -67,7 +66,7 @@ div {
     }
 }
 
-.number-input {
+.label-input {
     display: flex;
     width: 100%;
     border: 1px solid rebeccapurple;
@@ -85,5 +84,13 @@ div {
         width: 50%;
         padding: 0.5rem;
         border-radius: 5px;
+        text-align: center;
+    }
+
+    select {
+        width: 50%;
+        padding: 0.5rem;
+        border-radius: 5px;
+        text-align: center;
     }
 }
