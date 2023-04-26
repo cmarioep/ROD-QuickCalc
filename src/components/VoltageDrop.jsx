@@ -61,7 +61,7 @@ export const VoltageDrop = () => {
 
             </div>
 
-            <div>
+            <div className="formulario__container">
                 <p>Carga:</p>
                 <div>
                     <label htmlFor="loadCurrent">Carga:</label>
@@ -169,20 +169,17 @@ export const VoltageDrop = () => {
                 </div>
             </div>
 
-
-
-
-
-
-            <label htmlFor="long">Longitud:</label>
-            <input
-                type="number"
-                id="long"
-                name="long"
-                autoComplete='off'
-                onChange={onInputChange}
-                value={long}
-            />
+            <div className="label-input">
+                <label htmlFor="long">Longitud:</label>
+                <input
+                    type="number"
+                    id="long"
+                    name="long"
+                    autoComplete='off'
+                    onChange={onInputChange}
+                    value={long}
+                />
+            </div>
 
             <h3>{`%Reg: ${voltageDrop}`}</h3>
 
