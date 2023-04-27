@@ -1,12 +1,18 @@
+import { Route, Routes } from "react-router-dom";
+
 import { VoltageDrop } from './components/VoltageDrop';
 
 
 function App() {
 
   return (
-    <div className="App">
-      <VoltageDrop />
-    </div>
+
+    <>
+      <Routes>
+        <Route path="/" element={<VoltageDrop />} />
+      </Routes>
+    </>
+
   )
 }
 
