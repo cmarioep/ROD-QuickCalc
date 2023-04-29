@@ -1,6 +1,9 @@
 import { Route, Routes } from "react-router-dom";
 
+import { Home } from "./pages/Home";
 import { VoltageDrop } from './components/VoltageDrop';
+
+
 
 
 function App() {
@@ -9,7 +12,8 @@ function App() {
 
     <>
       <Routes>
-        <Route path="/" element={<VoltageDrop />} />
+        <Route path="/" element={<Home />} />
+        <Route path="/voltagedrop" element={<VoltageDrop />} />
       </Routes>
     </>
 
