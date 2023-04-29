@@ -1,18 +1,19 @@
-$radio-border-color: #ccc;
-$radio-background-color: #fff;
-$radio-checked-color: #007bff;
+@use '../utils/variables.scss' as *;
 
 .formulario {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
     width: 95%;
     max-width: 420px;
     height: 100vh;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    margin: 0 auto;
     padding: 2rem;
+    padding-top: $navbar-heigh;
+    margin: 0 auto;
     border-radius: 1rem;
+    
     box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.1);
     background-color: #FFFFFF;
 
@@ -58,6 +59,9 @@ $radio-checked-color: #007bff;
         width: 1.2em;
         height: 1.2em;
         border-radius: 50%;
+        accent-color: $clr-primary;
+        -webkit-accent-color: $clr-primary;
+        -moz-accent-color: $clr-primary;
     }
 }
 
@@ -76,18 +80,13 @@ $radio-checked-color: #007bff;
         font-weight: bold;
     }
 
-    input[type="number"] {
-        width: 50%;
-        padding: 0.5rem;
-        border-radius: 5px;
-        text-align: center;
-    }
-
+    input[type="number"],
     select {
         width: 50%;
         padding: 0.5rem;
         border-radius: 5px;
         text-align: center;
+        border: 1px solid $clr-primary;
     }
 }
 
