@@ -1,0 +1,6 @@
+@use '../utils/variables.scss' as *;
+
+.current-capacity {
+    height: 100vh;
+    padding-top: $navbar-heigh;
+}

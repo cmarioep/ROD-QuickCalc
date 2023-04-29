@@ -1,0 +1,6 @@
+@use '../utils/variables.scss' as *;
+
+.home {
+    height: 100vh;
+    padding-top: $navbar-heigh;
+}
