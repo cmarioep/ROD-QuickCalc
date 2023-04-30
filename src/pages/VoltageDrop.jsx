@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useForm } from '../hooks/useForm';
 import { getVoltageDrop } from '../utils/getVoltageDrop';
-import '../styles/components/VoltageDrop.scss';
+import '../styles/pages/VoltageDrop.scss';
 
 
 
@@ -144,7 +144,7 @@ export const VoltageDrop = () => {
                 <div className="label-input">
                     <label htmlFor="awg">Calibre AWG:</label>
                     <select id="awg" name="awg" onChange={onInputChange} defaultValue="">
-                    <option value="">Selecciona una opción</option>
+                        <option value="">Selecciona una opción</option>
                         <option value="2">2</option>
                         <option value="4">4</option>
                         <option value="6">6</option>
@@ -179,22 +179,22 @@ export const VoltageDrop = () => {
                     </div>
                 </div>
 
+                <div className="label-input">
+                    <label htmlFor="long">Longitud:</label>
+                    <input
+                        type="number"
+                        id="long"
+                        name="long"
+                        autoComplete='off'
+                        placeholder='Metros'
+                        value={long}
+                        onChange={onInputChange}
+                    />
+                </div>
+
             </div>
 
-            <div className="label-input">
-                <label htmlFor="long">Longitud:</label>
-                <input
-                    type="number"
-                    id="long"
-                    name="long"
-                    autoComplete='off'
-                    placeholder='Metros'
-                    value={long}
-                    onChange={onInputChange}
-                />
-            </div>
-
-            {voltageDrop ? <h3 className='system-result'>`%Reg: ${voltageDrop}` </h3> : null}
+            <h3 className='system-result'>%Reg: ${voltageDrop} </h3>
 
         </form>
 
