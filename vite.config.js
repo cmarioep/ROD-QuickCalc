@@ -13,26 +13,27 @@ export default defineConfig({
       {
         registerType: 'autoUpdate',
         manifest: {
-          name: 'My Awesome App',
-          short_name: 'MyApp',
-          description: 'My Awesome App description',
+          name: 'ROD-QuickCalc',
+          short_name: 'QuickCalc',
+          description: 'Calculos electricos rapidos',
+          background_color: '#ffffff',
           theme_color: '#54893e',
           icons: [
             {
-              src: 'src/assets/pwa/Isotipo-192x192.png',
+              src: '/Isotipo-192x192.png',
               sizes: '192x192',
               type: 'image/png'
             },
             {
-              src: 'src/assets/pwa/Isotipo-512x512.png',
+              src: '/Isotipo-512x512.png',
               sizes: '512x512',
               type: 'image/png'
             },
             {
-              src: 'src/assets/pwa/Isotipo-512x512.png',
+              src: '/Isotipo-512x512.png',
               sizes: '512x512',
               type: 'image/png',
-              purpose: 'any maskable'
+              purpose: 'maskable'
             },
 
           ],
