@@ -8,16 +8,21 @@
 
     &__item {
         display: block;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
 
         padding: 1.5rem;
+        border-bottom: 1px solid $clr-primary;
 
         font-size: 1.5rem;
         font-weight: 400;
-        text-decoration: none;
         color: $clr-primary;
+        text-decoration: none;
 
-
-        border-bottom: 1px solid $clr-primary;
+        svg  {
+            margin: 0;
+        }
     }
 }
 
