@@ -1,3 +1,15 @@
 $clr-primary: rgb(84, 137, 62);
 
+
+// Map breakpoints for media queries
+$breakpoints: (
+    small: 320px,
+    standar: 375px,
+    intermediate: 688px,
+    medium: 1024px,
+    large: 1280px,
+    xlarge: 1366px
+);
+
+
 $navbar-heigh: 8vh;
