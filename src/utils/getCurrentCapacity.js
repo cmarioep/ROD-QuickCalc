@@ -17,4 +17,4 @@ function getCurrentCapacity(current) {
     return null; // Retorna null si no se encuentra ningún calibre correspondiente
 }
 
-console.log(findAwg(22));
+console.log(getCurrentCapacity(25));
