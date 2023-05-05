@@ -1,8 +1,13 @@
 import { awgCurrent } from './wireData.js';
 
 
-export const getCurrentCapacity = (material,temperature, current, ) => {
+export const getCurrentCapacity = (material,temperature, current ) => {
 
+    if (!current) {
+        return;
+    }
+
+    current = Number(current);
 
     if (material === 'Cu' && temperature === '60') {
 
@@ -40,3 +45,6 @@ export const getCurrentCapacity = (material,temperature, current, ) => {
         return null;
     }
 }
+
+// console.log(getCurrentCapacity('Cu', '60', 100));
+// console.log(getCurrentCapacity('Cu', '60', ));
