@@ -1,3 +1,5 @@
+@use './styles/utils/' as *;
+
 * {
     box-sizing: border-box;
     overflow: hidden;
@@ -8,9 +10,13 @@
 }
 
 body {
-    display: flex;
-    justify-content: center;
-    align-items: center;
 
+    @include mediaquery(intermediate) {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    width: 100%;
     min-height: 100vh;
 }
