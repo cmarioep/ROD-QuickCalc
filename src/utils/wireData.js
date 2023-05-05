@@ -110,7 +110,7 @@ export const wireData = {
     }
 }
 
-export const currentData = {
+export const awgCurrent = {
 
     CuSixty: {
         400: 750,

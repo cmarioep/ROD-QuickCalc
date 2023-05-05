@@ -1,20 +1,42 @@
-const awgCurrent = {
-    100: 2,
-    80: 4,
-    60: 6,
-    40: 8,
-    30: 10,
-    20: 12,
-    10: 14
-};
+import { awgCurrent } from './wireData.js';
 
-function getCurrentCapacity(current) {
-    for (let currentVal in awgCurrent) {
-        if (currentVal >= current) {
-            return awgCurrent[currentVal];
+
+export const getCurrentCapacity = (material,temperature, current, ) => {
+
+
+    if (material === 'Cu' && temperature === '60') {
+
+        for (let currentVal in awgCurrent.CuSixty) {
+
+            if (currentVal >= current) {
+                return awgCurrent.CuSixty[currentVal];
+            }
         }
-    }
-    return null; // Retorna null si no se encuentra ningún calibre correspondiente
-}
 
-console.log(getCurrentCapacity(25));
+        return null; // Retorna null si no se encuentra ningún calibre correspondiente
+    }
+
+    if (material === 'Cu' && temperature === '75') {
+
+        for (let currentVal in awgCurrent.CuSeventyFive) {
+
+            if (currentVal >= current) {
+                return awgCurrent.CuSeventyFive[currentVal];
+            }
+        }
+
+        return null;
+    }
+
+    if (material === 'Cu' && temperature === '90') {
+
+        for (let currentVal in awgCurrent.CuNinety) {
+
+            if (currentVal >= current) {
+                return awgCurrent.CuNinety[currentVal];
+            }
+        }
+
+        return null;
+    }
+}
