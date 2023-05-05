@@ -21,7 +21,7 @@ export const VoltageDrop = () => {
 
         <form className="formulario">
 
-            <div className="formulario__container">
+            <div className="formulario__container grid-system-type">
 
                 <div className='system-options'>
                     <p>Sistema:</p>
@@ -62,7 +62,7 @@ export const VoltageDrop = () => {
 
             </div>
 
-            <div className="formulario__container">
+            <div className="formulario__container grid-system-current">
 
                 <div className="system-options">
                     <p>Carga:</p>
@@ -115,7 +115,7 @@ export const VoltageDrop = () => {
             </div>
 
 
-            <div className="formulario__container">
+            <div className="formulario__container grid-system-conduit">
 
                 <div className="system-options">
                     <p>Alimentador:</p>
@@ -194,7 +194,7 @@ export const VoltageDrop = () => {
 
             </div>
 
-            <h3 className='system-result'>%Reg: ${voltageDrop} </h3>
+            <h3 className='system-result grid-system-result'>%Reg: ${voltageDrop} </h3>
 
         </form>
 
