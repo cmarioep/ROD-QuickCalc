@@ -88,7 +88,7 @@ export const VoltageDrop = () => {
                     </div>
                 </div>
 
-                <div className="label-input">
+                <div className="label-input --mb-1">
                     <label htmlFor="loadCurrent">Carga:</label>
                     <input
                         type="number"
@@ -115,9 +115,9 @@ export const VoltageDrop = () => {
             </div>
 
 
-            <div className="formulario__container grid-system-conduit">
+            <div className="formulario__container grid-system-path">
 
-                <div className="system-options">
+                <div className="system-options grid-system-path-wire">
                     <p>Alimentador:</p>
                     <div className="radio-input">
                         <label htmlFor="material">Cobre
@@ -155,7 +155,7 @@ export const VoltageDrop = () => {
                     </select>
                 </div>
 
-                <div className="system-options">
+                <div className="system-options grid-system-path-conduit">
                     <p>Canalización:</p>
                     <div className='radio-input'>
                         <label htmlFor="conduit">PVC
