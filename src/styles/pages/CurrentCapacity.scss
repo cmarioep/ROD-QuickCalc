@@ -1,6 +1,39 @@
 @use '../utils/' as *;
 
 .current-capacity {
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+
     height: 100vh;
+    padding: 1.5rem;
+    margin-top: 3rem;
     padding-top: $navbar-heigh;
+
+
+    @include mediaquery(intermediate) {
+        justify-content: center;
+        width: 720px;
+        height: 480px;
+        margin-top: unset;
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+
+        width: 100%;
+
+        @include mediaquery(intermediate) {
+            display: flex;
+            justify-content: space-between;
+
+            width: 50%;
+            height: 250px;
+            padding: 1.5rem;
+            border-radius: 5px;
+            border: 1px solid $clr-primary;
+        }
+    }
 }

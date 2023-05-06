@@ -36,12 +36,6 @@
             border-radius: 5px;
             border: 1px solid $clr-primary;
         }
-
-        p {
-            width: 40%;
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
     }
 }
 
@@ -54,11 +48,13 @@
         margin-bottom: 1.2rem;
     }
 
-
-
     p {
         width: 55%;
+
+        font-size: 1.2rem;
+        font-weight: bold;
         color: rgb(26, 109, 44);
+
 
         @include mediaquery(intermediate) {
             width: 65%;

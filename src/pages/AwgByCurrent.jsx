@@ -13,8 +13,8 @@ export const AwgByCurrent = () => {
     const [awg, setAwg] = useState('');
 
     useEffect(() => {
-        console.log(formState)
-        setAwg(getCurrentCapacity(material, temperature, current))
+        console.log(formState);
+        setAwg(getCurrentCapacity(material, temperature, current));
     }, [formState])
 
 
@@ -22,23 +22,11 @@ export const AwgByCurrent = () => {
     return (
         <div className='current-capacity'>
 
-            <h3>Capacidad de Corriente</h3>
-
             <form >
 
-                <div >
-                    <label htmlFor="awg">Temperatura:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="">
-                        <option value="">Selecciona una opción</option>
-                        <option value="60">60 °C</option>
-                        <option value="75">75 °C</option>
-                        <option value="90">90 °C</option>
-                    </select>
-                </div>
-
-                <div >
+                <div className='system-options'>
                     <p>Material:</p>
-                    <div >
+                    <div className='radio-input'>
                         <label htmlFor="material">Cobre
                             <input
                                 type="radio"
@@ -60,20 +48,30 @@ export const AwgByCurrent = () => {
                     </div>
                 </div>
 
-                <div>
-                    <label htmlFor="voltage">Tensión:</label>
+                <div className="label-input">
+                    <label htmlFor="awg">Temperatura:</label>
+                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="">
+                        <option value="">Selecciona una opción</option>
+                        <option value="60">60 °C</option>
+                        <option value="75">75 °C</option>
+                        <option value="90">90 °C</option>
+                    </select>
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="voltage">Corriente:</label>
                     <input
                         type="number"
                         id="current"
                         name="current"
                         autoComplete='off'
-                        placeholder='Corriente en Amperios'
+                        placeholder='Amperios'
                         value={current}
                         onChange={onInputChange}
                     />
                 </div>
 
-                <h3 >Calibre AWG: {awg} </h3>
+                <h3 className='system-result'>Calibre AWG: {awg} </h3>
 
 
             </form>
