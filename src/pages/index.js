@@ -1,3 +1,3 @@
 export * from './Home';
-export * from './CurrentCapacity';
+export * from './AwgByCurrent';
 export * from './VoltageDrop';

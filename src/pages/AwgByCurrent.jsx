@@ -6,7 +6,7 @@ import { getCurrentCapacity } from '../utils/getCurrentCapacity';
 
 import '../styles/pages/CurrentCapacity.scss';
 
-export const CurrentCapacity = () => {
+export const AwgByCurrent = () => {
 
     const { material, temperature, current, formState, onInputChange } = useForm({ material: '', temperature: '', current: '' });
 
