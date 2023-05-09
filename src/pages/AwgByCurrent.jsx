@@ -76,6 +76,20 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <div className="label-input">
+                    <label htmlFor="awg">Portadores de Corriente:</label>
+                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="3">
+                        <option value="">Selecciona una opción</option>
+                        <option value="3"> De 1 a 3</option>
+                        <option value="6">De 4 a 6</option>
+                        <option value="9">De 7 a 9</option>
+                        <option value="20">De 10 a 20</option>
+                        <option value="30">De 21 a 30</option>
+                        <option value="40">De 31 a 40</option>
+                        <option value="100">De 41 y más</option>
+                    </select>
+                </div>
+
+                <div className="label-input">
                     <label htmlFor="voltage">Corriente:</label>
                     <input
                         type="number"

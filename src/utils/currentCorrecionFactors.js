@@ -47,5 +47,5 @@ export const conduitDensityFactor = {
     20: 0.50,
     9: 0.70,
     6: 0.8,
-    4: 1
+    3: 1
 }
