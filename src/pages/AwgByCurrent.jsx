@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react';
 
 import { useForm } from '../hooks/useForm';
-import { getCurrentCapacity } from '../utils/getCurrentCapacity';
+import { getAWGByCurrent } from '../utils/getAwgByCurrent.js';
 
 
 import '../styles/pages/CurrentCapacity.scss';
@@ -14,7 +14,7 @@ export const AwgByCurrent = () => {
 
     useEffect(() => {
         console.log(formState);
-        setAwg(getCurrentCapacity(material, temperature, environmentTemperature, occupation, current));
+        setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
     }, [formState])
 
 

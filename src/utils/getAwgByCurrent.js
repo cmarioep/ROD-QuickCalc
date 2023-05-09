@@ -1,5 +1,5 @@
 import { CurrentAWG } from './wireData.js';
-import { temperatureCorrectionFactor, conduitDensityFactor } from './currentCorrecionFactors.js';
+import { temperatureCorrectionFactor, conduitDensityFactor } from './AwgCorrecionFactors.js';
 
 
 const setCurrentData = (material, temperature, factor) => {
@@ -16,12 +16,12 @@ const setCurrentData = (material, temperature, factor) => {
 }
 
 
-const getTemperatureFactor = (material, temperature, environmentTemperature) => {
+const getTemperatureFactor = (temperature, environmentTemperature) => {
 
-    for (let currentEnvironmentTemperature in temperatureCorrectionFactor[material][temperature]) {
+    for (let currentEnvironmentTemperature in temperatureCorrectionFactor[temperature]) {
 
         if (currentEnvironmentTemperature >= environmentTemperature) {
-            return temperatureCorrectionFactor[material][temperature][currentEnvironmentTemperature];
+            return temperatureCorrectionFactor[temperature][currentEnvironmentTemperature];
         }
     }
 
@@ -43,7 +43,7 @@ const getDensityFactor = (occupation) => {
 }
 
 
-const getAWGByCurrent = (currentData, current) => {
+const getAWG = (currentData, current) => {
 
     for (let currentVal in currentData) {
 
@@ -56,7 +56,7 @@ const getAWGByCurrent = (currentData, current) => {
 }
 
 
-export const getCurrentCapacity = (material, temperature, environmentTemperature, occupation, current) => {
+export const getAWGByCurrent = (material, temperature, environmentTemperature, occupation, current) => {
 
     if (!current) {
         return;
@@ -67,12 +67,12 @@ export const getCurrentCapacity = (material, temperature, environmentTemperature
     occupation = Number(occupation);
 
 
-    const temperatureFactor = getTemperatureFactor(material, temperature, environmentTemperature);
+    const temperatureFactor = getTemperatureFactor(temperature, environmentTemperature);
     const densityFactor = getDensityFactor(occupation);
     const correctionFactor = temperatureFactor * densityFactor;
 
     const currentData = setCurrentData(material, temperature, correctionFactor);
-    const awg = getAWGByCurrent(currentData, current);
+    const awg = getAWG(currentData, current);
 
     return awg;
 
