@@ -49,12 +49,29 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <div className="label-input">
-                    <label htmlFor="awg">Temperatura:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="">
+                    <label htmlFor="awg">Temperatura del Conductor:</label>
+                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="75">
                         <option value="">Selecciona una opción</option>
                         <option value="60">60 °C</option>
                         <option value="75">75 °C</option>
                         <option value="90">90 °C</option>
+                    </select>
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="awg">Temperatura Ambiente:</label>
+                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="30">
+                        <option value="">Selecciona una opción</option>
+                        <option value="25">21-25 °C</option>
+                        <option value="30">26-30 °C</option>
+                        <option value="35">31-35 °C</option>
+                        <option value="40">36-40 °C</option>
+                        <option value="45">41-45 °C</option>
+                        <option value="50">46-50 °C</option>
+                        <option value="55">51-55 °C</option>
+                        <option value="60">56-60 °C</option>
+                        <option value="70">61-70 °C</option>
+                        <option value="80">71-80 °C</option>
                     </select>
                 </div>
 
