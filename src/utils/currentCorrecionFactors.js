@@ -39,3 +39,13 @@ export const temperatureCorrectionFactor = {
     }
 
 }
+
+export const conduitDensityFactor = {
+    100 : 0.35,
+    40: 0.40,
+    30: 0.45,
+    20: 0.50,
+    9: 0.70,
+    6: 0.8,
+    4: 1
+}
