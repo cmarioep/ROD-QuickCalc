@@ -10,9 +10,10 @@ export const Home = () => {
 
     return (
         <ul className="home">
-            <li><Link className="home__item" to="/voltagedrop">Caida de Tensión <ForwardIcon/> </Link></li>
-            <li><Link className="home__item" to="/awgbycurrent">Capacidad de Corriente <ForwardIcon/> </Link></li>
-            <li><Link className="home__item" to="/currentcapacity">Selección de Alimentador<ForwardIcon/> </Link></li>
+            <li><Link className="home__item" to="/voltagedrop">Caida de Tensión <ForwardIcon /> </Link></li>
+            <li><Link className="home__item" to="/awgbycurrent">Alimentador por Corriente<ForwardIcon /> </Link></li>
+            <li><Link className="home__item" to="/currentcapacity">Alimentador por Caida de Tensión<ForwardIcon /> </Link></li>
+            <li><Link className="home__item" to="/currentcapacity">Llenado de Bandeja<ForwardIcon /> </Link></li>
         </ul>
     )
 
