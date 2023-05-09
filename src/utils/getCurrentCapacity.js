@@ -1,6 +1,20 @@
 import { CurrentAWG } from './wireData.js';
 import { temperatureCorrectionFactor, conduitDensityFactor } from './currentCorrecionFactors.js';
 
+const setCurrentData = (material, temperature, factor) => {
+    const newObj = {};
+    if (CurrentAWG[material] && CurrentAWG[material][temperature]) {
+        const currentObj = CurrentAWG[material][temperature];
+        for (const key in currentObj) {
+            let newKey = key * factor;
+            newKey = newKey.toFixed(2);
+            newObj[newKey] = currentObj[key];
+        }
+    }
+    return newObj;
+}
+
+
 
 const getTemperatureFactor = (material, temperature, environmentTemperature) => {
 
@@ -15,20 +29,6 @@ const getTemperatureFactor = (material, temperature, environmentTemperature) => 
 
 }
 
-
-const getAWGByCurrent = (material, temperature, environmentTemperature, current) => {
-
-    for (let currentVal in CurrentAWG[material][temperature]) {
-
-        if (currentVal >= current) {
-            return CurrentAWG[material][temperature][currentVal];
-        }
-    }
-
-    return null; // Retorna null si no se encuentra ningún calibre correspondiente
-}
-
-
 const getDensityFactor = (occupation) => {
 
     for (let currentOccupation in conduitDensityFactor) {
@@ -41,6 +41,21 @@ const getDensityFactor = (occupation) => {
     return null; // Retorna null si no se encuentra ningún calibre correspondiente
 }
 
+const getAWGByCurrent = (currentData, current) => {
+
+    for (let currentVal in currentData) {
+
+        if (currentVal >= current) {
+            return currentData[currentVal];
+        }
+    }
+
+    return null; // Retorna null si no se encuentra ningún calibre correspondiente
+}
+
+
+
+
 
 export const getCurrentCapacity = (material, temperature, environmentTemperature, occupation, current) => {
 
@@ -52,19 +67,23 @@ export const getCurrentCapacity = (material, temperature, environmentTemperature
     environmentTemperature = Number(environmentTemperature);
     occupation = Number(occupation);
 
-    const initAWG = getAWGByCurrent(material, temperature, environmentTemperature, current);
 
     const temperatureFactor = getTemperatureFactor(material, temperature, environmentTemperature);
+    console.log(temperatureFactor);
     const densityFactor = getDensityFactor(occupation);
+    console.log(densityFactor);
+    const correctionFactor = temperatureFactor * densityFactor;
 
-    const currentCapacity = (initAWG * temperatureFactor * densityFactor).toFixed(2);
+    const currentData = setCurrentData(material, temperature, correctionFactor);
+    console.log(currentData);
+    const awg = getAWGByCurrent(currentData, current);
 
-    if (currentCapacity) {
+    return awg;
 
-    }
+
 
 }
 
+console.log(getCurrentCapacity('Cu', '60', 23, 3, 142));
 
-// console.log(getCurrentCapacity('Cu', '90', 130));
-// console.log(getCurrentCapacity('Cu', '60', ));
+
