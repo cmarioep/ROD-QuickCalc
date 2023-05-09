@@ -1,6 +1,7 @@
 import { CurrentAWG } from './wireData.js';
 import { temperatureCorrectionFactor, conduitDensityFactor } from './currentCorrecionFactors.js';
 
+
 const setCurrentData = (material, temperature, factor) => {
     const newObj = {};
     if (CurrentAWG[material] && CurrentAWG[material][temperature]) {
@@ -13,7 +14,6 @@ const setCurrentData = (material, temperature, factor) => {
     }
     return newObj;
 }
-
 
 
 const getTemperatureFactor = (material, temperature, environmentTemperature) => {
@@ -29,6 +29,7 @@ const getTemperatureFactor = (material, temperature, environmentTemperature) => 
 
 }
 
+
 const getDensityFactor = (occupation) => {
 
     for (let currentOccupation in conduitDensityFactor) {
@@ -40,6 +41,7 @@ const getDensityFactor = (occupation) => {
 
     return null; // Retorna null si no se encuentra ningún calibre correspondiente
 }
+
 
 const getAWGByCurrent = (currentData, current) => {
 
@@ -54,9 +56,6 @@ const getAWGByCurrent = (currentData, current) => {
 }
 
 
-
-
-
 export const getCurrentCapacity = (material, temperature, environmentTemperature, occupation, current) => {
 
     if (!current) {
@@ -69,21 +68,15 @@ export const getCurrentCapacity = (material, temperature, environmentTemperature
 
 
     const temperatureFactor = getTemperatureFactor(material, temperature, environmentTemperature);
-    console.log(temperatureFactor);
     const densityFactor = getDensityFactor(occupation);
-    console.log(densityFactor);
     const correctionFactor = temperatureFactor * densityFactor;
 
     const currentData = setCurrentData(material, temperature, correctionFactor);
-    console.log(currentData);
     const awg = getAWGByCurrent(currentData, current);
 
     return awg;
 
-
-
 }
 
-console.log(getCurrentCapacity('Cu', '60', 23, 3, 142));
 
 

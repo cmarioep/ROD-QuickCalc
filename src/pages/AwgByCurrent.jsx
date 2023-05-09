@@ -8,13 +8,13 @@ import '../styles/pages/CurrentCapacity.scss';
 
 export const AwgByCurrent = () => {
 
-    const { material, temperature, current, formState, onInputChange } = useForm({ material: '', temperature: '', current: '' });
+    const { material, temperature, environmentTemperature, occupation, current, formState, onInputChange } = useForm({ material: 'Cu', temperature: '75', environmentTemperature: '26', occupation: '3', current: '' });
 
     const [awg, setAwg] = useState('');
 
     useEffect(() => {
         console.log(formState);
-        setAwg(getCurrentCapacity(material, temperature, current));
+        setAwg(getCurrentCapacity(material, temperature, environmentTemperature, occupation, current));
     }, [formState])
 
 
@@ -60,7 +60,7 @@ export const AwgByCurrent = () => {
 
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura Ambiente:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="30">
+                    <select id="awg" name="environmentTemperature" onChange={onInputChange} defaultValue="30">
                         <option value="">Selecciona una opción</option>
                         <option value="25">21-25 °C</option>
                         <option value="30">26-30 °C</option>
@@ -77,7 +77,7 @@ export const AwgByCurrent = () => {
 
                 <div className="label-input">
                     <label htmlFor="awg">Portadores de Corriente:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="3">
+                    <select id="awg" name="occupation" onChange={onInputChange} defaultValue="3">
                         <option value="">Selecciona una opción</option>
                         <option value="3"> De 1 a 3</option>
                         <option value="6">De 4 a 6</option>
