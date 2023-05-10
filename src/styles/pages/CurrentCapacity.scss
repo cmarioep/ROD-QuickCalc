@@ -8,14 +8,13 @@
 
     height: 100vh;
     padding: 1.5rem;
-    margin-top: 3rem;
-    padding-top: $navbar-heigh;
+    padding-top: $navbar-heigh + 3vh;
 
 
     @include mediaquery(intermediate) {
         justify-content: center;
         width: 720px;
-        height: 480px;
+        height: 100%;
         margin-top: unset;
     }
 
@@ -30,7 +29,7 @@
             justify-content: space-between;
 
             width: 60%;
-            height: 350px;
+            height: 100%;
             padding: 1.5rem;
             border-radius: 5px;
             border: 1px solid $clr-primary;
