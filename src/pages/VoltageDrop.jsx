@@ -8,7 +8,19 @@ import '../styles/pages/VoltageDrop.scss';
 
 export const VoltageDrop = () => {
 
-    const { type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long, formState, onInputChange, onResetForm } = useForm({ type: '', material: '', conduit: '', voltage: '', fp: '', loadType: '', loadCurrent: '', awg: '', long: '' });
+    const { type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long, formState, onInputChange, onResetForm } = useForm(
+        {
+            type: 'trifasico',
+            voltage: '',
+            loadType: 'amperios',
+            loadCurrent: '',
+            fp: '0.9',
+            material: 'Cu',
+            conduit: 'PVC',
+            awg: '',
+            long: ''
+        }
+    );
 
     const [voltageDrop, setVoltageDrop] = useState('')
 
@@ -67,7 +79,7 @@ export const VoltageDrop = () => {
                 <div className="system-options">
                     <p>Carga:</p>
                     <div className="radio-input">
-                        <label htmlFor="type">kVA
+                        <label htmlFor="loadType">kVA
                             <input
                                 type="radio"
                                 value="kva"
@@ -76,7 +88,7 @@ export const VoltageDrop = () => {
                                 onChange={onInputChange}
                             />
                         </label>
-                        <label htmlFor="type">Amperios
+                        <label htmlFor="loadType">Amperios
                             <input
                                 type="radio"
                                 value="amperios"
@@ -103,7 +115,7 @@ export const VoltageDrop = () => {
 
                 <div className="label-input">
                     <label htmlFor="fp">Factor de Potencia:</label>
-                    <select id="fp" name="fp" onChange={onInputChange} defaultValue="">
+                    <select id="fp" name="fp" onChange={onInputChange} defaultValue="0.9">
                         <option value="">Selecciona una opción</option>
                         <option value="1">1</option>
                         <option value="0.95">0.95</option>
