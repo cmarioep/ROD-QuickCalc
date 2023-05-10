@@ -1,4 +1,4 @@
-import { wireData } from './wireData.js';
+import { electrictParamsAWG } from './wireData.js';
 
 
 const sinFP = {
@@ -11,37 +11,22 @@ const sinFP = {
 
 const getResistance = (material, conduit, awg) => {
 
-    if (material === 'Cu' && conduit === 'PVC') {
-        const resistance = wireData.resistanceCuOnPVC[awg];
-        return resistance;
-    }
+    const resistance = electrictParamsAWG['resistance'][material][conduit][awg];
 
-    if (material === 'Cu' && conduit === 'ACERO') {
-        const resistance = wireData.resistanceCuOnAcero[awg];
-        return resistance;
-    }
-
-    if (material === 'Al' && conduit === 'PVC') {
-        const resistance = wireData.resistanceALOnPVC[awg];
-        return resistance;
-    }
-
-    if (material === 'Al' && conduit === 'ACERO') {
-        const resistance = wireData.resistanceALOnAcero[awg];
-        return resistance;
-    }
+    return resistance;
 }
+
 
 
 const getInductance = (conduit, awg) => {
 
     if (conduit === 'PVC') {
-        const inductance = wireData.inductanceOnPVC[awg];
+        const inductance = electrictParamsAWG.inductanceOnPVC[awg];
         return inductance;
     }
 
     if (conduit === 'ACERO') {
-        const inductance = wireData.inductanceOnAcero[awg];
+        const inductance = electrictParamsAWG.inductanceOnAcero[awg];
         return inductance;
     }
 
