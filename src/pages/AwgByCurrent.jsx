@@ -8,7 +8,19 @@ import '../styles/pages/CurrentCapacity.scss';
 
 export const AwgByCurrent = () => {
 
-    const { material, temperature, environmentTemperature, occupation, current, formState, onInputChange } = useForm({ material: 'Cu', temperature: '75', environmentTemperature: '26', occupation: '3', current: '' });
+    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, formState, onInputChange } = useForm(
+        {
+            material: 'Cu',
+            temperature: '75',
+            environmentTemperature: '26',
+            occupation: '3',
+            current: '',
+            type: 'trifasico',
+            voltage: '208',
+            fp: '0.9',
+            conduit: 'PVC'
+        }
+    );
 
     const [awg, setAwg] = useState('');
 
@@ -104,6 +116,84 @@ export const AwgByCurrent = () => {
 
                 <h3 className='system-result'>Calibre AWG: {awg} </h3>
 
+
+            </form>
+
+
+            <form>
+                <div className='system-options'>
+                    <p>Sistema:</p>
+                    <div className='radio-input'>
+                        <label htmlFor="type">Monofásico
+                            <input
+                                type="radio"
+                                value="monofasico"
+                                name="type"
+                                checked={type === "monofasico"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="type">Trifásico
+                            <input
+                                type="radio"
+                                value="trifasico"
+                                name="type"
+                                checked={type === "trifasico"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="voltage">Tensión:</label>
+                    <input
+                        type="number"
+                        id="voltage"
+                        name="voltage"
+                        autoComplete='off'
+                        placeholder='Voltios'
+                        value={voltage}
+                        onChange={onInputChange}
+                    />
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="fp">Factor de Potencia:</label>
+                    <select id="fp" name="fp" onChange={onInputChange} defaultValue="0.9">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">1</option>
+                        <option value="0.95">0.95</option>
+                        <option value="0.9">0.9</option>
+                        <option value="0.85">0.85</option>
+                    </select>
+                </div>
+
+                <div className="system-options">
+                    <p>Canalización:</p>
+                    <div className='radio-input'>
+                        <label htmlFor="conduit">PVC
+                            <input
+                                type="radio"
+                                value="PVC"
+                                name="conduit"
+                                checked={conduit === "PVC"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="conduit">Metalica
+                            <input
+                                type="radio"
+                                value="ACERO"
+                                name="conduit"
+                                checked={conduit === "ACERO"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                    </div>
+                </div>
+
+                <h3 className='system-result'>Calibre AWG: {awg} </h3>
 
             </form>
 

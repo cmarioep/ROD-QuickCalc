@@ -12,6 +12,8 @@
 
 
     @include mediaquery(intermediate) {
+        flex-direction: row;
+        column-gap: 0.5rem;
         justify-content: center;
         width: 720px;
         height: 100%;
@@ -28,7 +30,7 @@
             display: flex;
             justify-content: space-between;
 
-            width: 60%;
+            width: 50%;
             height: 100%;
             padding: 1.5rem;
             border-radius: 5px;
