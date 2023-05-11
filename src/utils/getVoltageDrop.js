@@ -10,26 +10,14 @@ const sinFP = {
 
 
 const getResistance = (material, conduit, awg) => {
-
     const resistance = electrictParamsAWG['resistance'][material][conduit][awg];
-
     return resistance;
 }
 
 
-
 const getInductance = (conduit, awg) => {
-
-    if (conduit === 'PVC') {
-        const inductance = electrictParamsAWG.inductanceOnPVC[awg];
-        return inductance;
-    }
-
-    if (conduit === 'ACERO') {
-        const inductance = electrictParamsAWG.inductanceOnAcero[awg];
-        return inductance;
-    }
-
+    const inductance = electrictParamsAWG['inductance'][conduit][awg];
+    return inductance;
 }
 
 

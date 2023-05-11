@@ -1,9 +1,9 @@
 
 export const electrictParamsAWG = {
 
-    resistance : {
-        Cu : {
-            PVC : {
+    resistance: {
+        Cu: {
+            PVC: {
                 750: 0.065,
                 500: 0.089,
                 400: 0.108,
@@ -20,7 +20,7 @@ export const electrictParamsAWG = {
                 12: 6.56,
                 14: 10.17
             },
-            ACERO : {
+            ACERO: {
                 750: 0.069,
                 500: 0.095,
                 400: 0.115,
@@ -40,8 +40,8 @@ export const electrictParamsAWG = {
 
         },
 
-        Al : {
-            PVC : {
+        Al: {
+            PVC: {
                 750: 0.095,
                 500: 0.141,
                 400: 0.177,
@@ -58,7 +58,7 @@ export const electrictParamsAWG = {
                 12: 10.49,
                 14: 15.17
             },
-            ACERO : {
+            ACERO: {
                 750: 0.102,
                 500: 0.148,
                 400: 0.18,
