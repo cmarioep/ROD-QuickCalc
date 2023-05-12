@@ -23,6 +23,7 @@ export const AwgByCurrent = () => {
     );
 
     const [awg, setAwg] = useState('');
+    const [voltageDrop, setVoltageDrop] = useState(false);
 
     useEffect(() => {
         console.log(formState);
@@ -114,13 +115,16 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>Calibre AWG: {awg} </h3>
+                <h3 className='system-result'>Calibre AWG: {(awg) ? awg : null}
+                    {(awg) ? <div onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
+                </h3>
+
+
 
 
             </form>
 
-
-            <form>
+            {(voltageDrop && awg) ? <form className='voltage-dropchecker'>
                 <div className='system-options'>
                     <p>Sistema:</p>
                     <div className='radio-input'>
@@ -195,7 +199,7 @@ export const AwgByCurrent = () => {
 
                 <h3 className='system-result'>Calibre AWG: {awg} </h3>
 
-            </form>
+            </form> : null}
 
         </div>
     )
