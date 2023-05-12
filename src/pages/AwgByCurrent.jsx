@@ -8,7 +8,7 @@ import '../styles/pages/CurrentCapacity.scss';
 
 export const AwgByCurrent = () => {
 
-    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, formState, onInputChange } = useForm(
+    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, long, formState, onInputChange } = useForm(
         {
             material: 'Cu',
             temperature: '75',
@@ -18,7 +18,8 @@ export const AwgByCurrent = () => {
             type: 'trifasico',
             voltage: '208',
             fp: '0.9',
-            conduit: 'PVC'
+            conduit: 'PVC',
+            long: ''
         }
     );
 
@@ -195,6 +196,19 @@ export const AwgByCurrent = () => {
                             />
                         </label>
                     </div>
+                </div>
+
+                <div className="label-input">
+                    <label htmlFor="long">Longitud:</label>
+                    <input
+                        type="number"
+                        id="long"
+                        name="long"
+                        autoComplete='off'
+                        placeholder='Metros'
+                        value={long}
+                        onChange={onInputChange}
+                    />
                 </div>
 
                 <h3 className='system-result'>Calibre AWG: {awg} </h3>
