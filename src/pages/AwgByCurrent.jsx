@@ -30,6 +30,24 @@ export const AwgByCurrent = () => {
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
     }, [formState])
 
+    useEffect(() => {
+        const handleViewportChange = () => {
+            if (window.innerWidth > 688) {
+                setVoltageDrop(true);
+            } else {
+                setVoltageDrop(false);
+            }
+        };
+
+        handleViewportChange(); // Check initial viewport width
+
+        window.addEventListener('resize', handleViewportChange);
+
+        return () => {
+            window.removeEventListener('resize', handleViewportChange);
+        };
+    }, []);
+
 
 
     return (
@@ -121,8 +139,7 @@ export const AwgByCurrent = () => {
 
             </form>
 
-            {(voltageDrop && awg) ? <form className='current-capacity__container current-capacity__voltage-dropchecker'>
-                <div onClick={() => setVoltageDrop(!voltageDrop)}>X</div>
+            {(voltageDrop) ? <form className='current-capacity__container current-capacity__voltage-dropchecker'>
 
                 <div className='system-options'>
                     <p>Sistema:</p>
@@ -209,10 +226,16 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>Calibre AWG: {awg}</h3>
+                <h3 className='system-result'>Calibre AWG: {awg}
+                    <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
+                </h3>
+
 
 
             </form> : null}
+
+
+
 
         </div>
     )

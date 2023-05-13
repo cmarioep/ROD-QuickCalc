@@ -23,12 +23,12 @@
     &__container {
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
 
         width: 100%;
 
         @include mediaquery(intermediate) {
-            justify-content: space-between;
-
+            // justify-content: space-between;
             width: 50%;
             height: 100%;
             padding: 1.5rem;
@@ -38,19 +38,21 @@
     }
 
     &__voltage-dropchecker {
-
         position: absolute;
 
         width: 90%;
-        height: 350px;
+        height: 400px;
         padding: 1rem;
-        background-color: white;
+        border-radius: 5px;
         border: 1px solid $clr-primary;
+
+        background-color: white;
 
         @include mediaquery(intermediate) {
             position: unset;
             width: 50%;
             height: 100%;
+            padding: 1.5rem;
         }
     }
 }
@@ -62,9 +64,14 @@
     border-radius: 5px;
 
     color: white;
+    text-align: center;
     font-size: 0.8rem;
     margin-top: 0.5rem;
-    
+
     cursor: pointer;
     background-color: $clr-primary;
+
+    @include mediaquery(intermediate) {
+        display: none;
+    }
 }
