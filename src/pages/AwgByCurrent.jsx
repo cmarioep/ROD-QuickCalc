@@ -27,7 +27,6 @@ export const AwgByCurrent = () => {
     const [voltageDrop, setVoltageDrop] = useState(false);
 
     useEffect(() => {
-        console.log(formState);
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
     }, [formState])
 

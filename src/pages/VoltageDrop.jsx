@@ -1,9 +1,7 @@
-
 import { useEffect, useState } from 'react';
 import { useForm } from '../hooks/useForm';
 import { getVoltageDrop } from '../utils/getVoltageDrop';
 import '../styles/pages/VoltageDrop.scss';
-
 
 
 export const VoltageDrop = () => {
@@ -25,8 +23,7 @@ export const VoltageDrop = () => {
     const [voltageDrop, setVoltageDrop] = useState('')
 
     useEffect(() => {
-        setVoltageDrop(getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long))
-        console.log(formState)
+        setVoltageDrop(getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long));
     }, [formState])
 
     return (
