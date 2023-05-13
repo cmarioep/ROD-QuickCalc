@@ -135,7 +135,7 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>
+                <h3 className='system-result system-result--unshadow'>
                     Calibre AWG: {(awg) ? awg : null}
                     <span>Por  capacidad de corriente </span>
                     {(awg) ? <div className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
@@ -230,7 +230,7 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>
+                <h3 className='system-result system-result--unshadow'>
                     Calibre AWG: {awg}
                     <span>Por  Caida de Tensión</span>
                     <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>

@@ -26,14 +26,18 @@
         justify-content: space-between;
 
         width: 100%;
+        padding: 1rem;
+        border: 1px solid $clr-primary;
+        border-radius: 5px;
+
+        box-shadow: 0px 8px 5px -5px rgba(59, 57, 57, 0.5);
 
         @include mediaquery(intermediate) {
             // justify-content: space-between;
             width: 50%;
             height: 100%;
             padding: 1.5rem;
-            border-radius: 5px;
-            border: 1px solid $clr-primary;
+
         }
     }
 

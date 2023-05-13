@@ -27,8 +27,12 @@
 
     &__container {
         width: 100%;
-        margin-bottom: 2rem;
-        border-bottom: 1px solid grey;
+        padding: 1rem;
+        margin-bottom: 1rem;
+        border: 1px solid grey;
+        border-radius: 5px;
+
+        box-shadow: 0px 8px 5px -5px rgba(59,57,57,0.5);
 
 
         @include mediaquery(intermediate) {
@@ -141,6 +145,12 @@
     font-size: 1.2rem;
     text-align: center;
     color: rgb(26, 109, 44);
+
+    box-shadow: 0px 8px 5px -5px rgba(59,57,57,0.5);
+
+    &--unshadow {
+        box-shadow: none;
+    }
 
     span {
         display: block;
