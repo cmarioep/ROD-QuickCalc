@@ -35,7 +35,7 @@ export const AwgByCurrent = () => {
     return (
         <div className='current-capacity'>
 
-            <form >
+            <form className='current-capacity__container'>
 
                 <div className='system-options'>
                     <p>Material:</p>
@@ -116,15 +116,14 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <h3 className='system-result'>Calibre AWG: {(awg) ? awg : null}
-                    {(awg) ? <div onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
+                    {(awg) ? <div className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
                 </h3>
-
-
-
 
             </form>
 
-            {(voltageDrop && awg) ? <form className='voltage-dropchecker'>
+            {(voltageDrop && awg) ? <form className='current-capacity__container current-capacity__voltage-dropchecker'>
+                <div onClick={() => setVoltageDrop(!voltageDrop)}>X</div>
+
                 <div className='system-options'>
                     <p>Sistema:</p>
                     <div className='radio-input'>
@@ -210,7 +209,8 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>Calibre AWG: {awg} </h3>
+                <h3 className='system-result'>Calibre AWG: {awg}</h3>
+
 
             </form> : null}
 

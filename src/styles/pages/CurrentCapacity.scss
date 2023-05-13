@@ -20,7 +20,7 @@
         margin-top: unset;
     }
 
-    form {
+    &__container {
         display: flex;
         flex-direction: column;
 
@@ -36,15 +36,35 @@
             border: 1px solid $clr-primary;
         }
     }
+
+    &__voltage-dropchecker {
+
+        position: absolute;
+
+        width: 90%;
+        height: 350px;
+        padding: 1rem;
+        background-color: white;
+        border: 1px solid $clr-primary;
+
+        @include mediaquery(intermediate) {
+            position: unset;
+            width: 50%;
+            height: 100%;
+        }
+    }
 }
 
 .btn-primary {
     width: 100%;
-    padding: 1rem;
-    margin-top: 0.5rem;
+    padding: 0.5rem;
     border: none;
     border-radius: 5px;
 
     color: white;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+    
+    cursor: pointer;
     background-color: $clr-primary;
 }
