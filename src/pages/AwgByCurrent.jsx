@@ -26,9 +26,11 @@ export const AwgByCurrent = () => {
     const [awg, setAwg] = useState('');
     const [voltageDrop, setVoltageDrop] = useState(false);
 
+
     useEffect(() => {
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
-    }, [formState])
+    }, [formState]);
+
 
     useEffect(() => {
         const handleViewportChange = () => {
@@ -133,7 +135,9 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>Calibre AWG: {(awg) ? awg : null}
+                <h3 className='system-result'>
+                    Calibre AWG: {(awg) ? awg : null}
+                    <span>Por  capacidad de corriente </span>
                     {(awg) ? <div className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
                 </h3>
 
@@ -226,7 +230,9 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result'>Calibre AWG: {awg}
+                <h3 className='system-result'>
+                    Calibre AWG: {awg}
+                    <span>Por  Caida de Tensión</span>
                     <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
                 </h3>
 

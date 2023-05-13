@@ -134,19 +134,22 @@
 
 .system-result {
     width: 100%;
-    // margin: 1rem 0;
     padding: 0.8rem;
     border: 1px solid grey;
     border-radius: 5px;
+
+    font-size: 1.2rem;
     text-align: center;
     color: rgb(26, 109, 44);
 
-    // div {
-    //     cursor: pointer;
-    //     color: rgb(124, 122, 122);
-    //     font-size: 0.8rem;
-    //     padding-top: 1rem;
-    // }
+    span {
+        display: block;
+        margin-top: 0.25rem;
+
+        color: rgb(94, 91, 108);
+        font-size: 0.8rem;
+        font-weight: bold;
+    }
 }
 
 
