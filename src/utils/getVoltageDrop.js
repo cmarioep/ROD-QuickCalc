@@ -36,7 +36,7 @@ const getEffectiveImpedance = (material, conduit, awg, fp) => {
 }
 
 
-const getLoadCurrent = (type, voltage, loadType, loadCurrent) => {
+const getLoadCurrent = (type, voltage, loadType = 'amperios', loadCurrent) => {
 
     voltage = Number(voltage);
 
@@ -63,11 +63,17 @@ const getLoadCurrent = (type, voltage, loadType, loadCurrent) => {
 export const getVoltageDrop = (type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long) => {
 
     voltage = Number(voltage);
+    loadCurrent = Number(loadCurrent);
     fp = Number(fp);
     awg = Number(awg);
     long = Number(long);
 
+    console.log('en voltage drop')
+
     const current = getLoadCurrent(type, voltage, loadType, loadCurrent);
+
+    console.log('current', current)
+
 
     let deltaDrop = getEffectiveImpedance(material, conduit, awg, fp) * (long / 1000) * current;
 
@@ -85,3 +91,35 @@ export const getVoltageDrop = (type, material, conduit, voltage, fp, loadType, l
     return Number(dropVoltage.toFixed(2));
 
 }
+
+export const checkVoltageDrop = (type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long) => {
+
+    console.log('calibre', awg)
+
+    const initialResult = getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long);
+    console.log('Caida de tension:', initialResult);
+
+    if (!initialResult) return;
+
+    if (initialResult <= 3) {
+        console.log('menor al 3', initialResult);
+        return awg;
+    } else {
+        const awgList = [14, 12, 10, 8, 6, 4, 2, '1/0', '2/0', '4/0', 250, 350, 400, 500, 750];
+        const startIndex = awgList.indexOf(awg) + 1; // get index of initial awg and add 1
+        console.log('startIndex', startIndex, 'awg', awg);
+        let result;
+        for (let i = startIndex; i < awgList.length; i++) {
+            const newAwg = awgList[i];
+            result = getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, newAwg, long);
+            console.log('nueva drop', result)
+            if (result <= 3) {
+                console.log('nuevo calibre', newAwg);
+                return newAwg;
+            }
+        }
+        // If no value is found, return the initial value
+        return awg;
+    }
+}
+

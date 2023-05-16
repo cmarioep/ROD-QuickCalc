@@ -2,6 +2,7 @@ import { useEffect, useState } from 'react';
 
 import { useForm } from '../hooks/useForm';
 import { getAWGByCurrent } from '../utils/getAwgByCurrent.js';
+import { checkVoltageDrop } from '../utils/getVoltageDrop.js';
 
 
 import '../styles/pages/CurrentCapacity.scss';
@@ -24,12 +25,21 @@ export const AwgByCurrent = () => {
     );
 
     const [awg, setAwg] = useState('');
+
+    const [awgByVoltageDrop, setAwgByVoltageDrop] = useState(awg);
+
     const [voltageDrop, setVoltageDrop] = useState(false);
 
 
     useEffect(() => {
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
+        console.log(formState);
     }, [formState]);
+
+    useEffect(() => {
+        setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'amperios', current, awg, long));
+        console.log('checker', awgByVoltageDrop);
+    }, [awg, type, voltage, fp, conduit, long]);
 
 
     useEffect(() => {
@@ -231,7 +241,7 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <h3 className='system-result system-result--unshadow'>
-                    Calibre AWG: {awg}
+                    Calibre AWG: {awgByVoltageDrop}
                     <span>Por  Caida de Tensión</span>
                     <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
                 </h3>
