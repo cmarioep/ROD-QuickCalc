@@ -4,6 +4,7 @@ import { WireIcon } from "../components/icons/WireIcon";
 import { CalculatorICon } from "../components/icons/CalculatorICon";
 
 import '../styles/pages/Home.scss';
+import home from '../assets/home-splash.webp'
 
 
 export const Home = () => {
@@ -12,7 +13,7 @@ export const Home = () => {
         <div className="home">
 
             <figure>
-                <img src="src/assets/home-splash.webp" alt="Imagen del Home" />
+                <img src={home} alt="Imagen del Home" />
             </figure>
 
             <ul className="home__items">
