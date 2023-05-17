@@ -155,13 +155,22 @@ export const VoltageDrop = () => {
                     <label htmlFor="awg">Calibre AWG:</label>
                     <select id="awg" name="awg" onChange={onInputChange} defaultValue="">
                         <option value="">Selecciona una opción</option>
-                        <option value="2">2</option>
-                        <option value="4">4</option>
-                        <option value="6">6</option>
-                        <option value="8">8</option>
-                        <option value="10">10</option>
-                        <option value="12">12</option>
                         <option value="14">14</option>
+                        <option value="12">12</option>
+                        <option value="10">10</option>
+                        <option value="8">8</option>
+                        <option value="6">6</option>
+                        <option value="4">4</option>
+                        <option value="2">2</option>
+                        <option value="1/0">1/0</option>
+                        <option value="2/0">2/0</option>
+                        <option value="4/0">4/0</option>
+                        <option value="250">250</option>
+                        <option value="300">300</option>
+                        <option value="350">350</option>
+                        <option value="500">500</option>
+                        <option value="700">700</option>
+                        <option value="750">750</option>
                     </select>
                 </div>
 

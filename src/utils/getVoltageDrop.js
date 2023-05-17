@@ -104,7 +104,7 @@ export const checkVoltageDrop = (type, material, conduit, voltage, fp, loadType,
         console.log('menor al 3', initialResult);
         return awg;
     } else {
-        const awgList = [14, 12, 10, 8, 6, 4, 2, '1/0', '2/0', '4/0', 250, 350, 400, 500, 750];
+        const awgList = [14, 12, 10, 8, 6, 4, 2, '1/0', '2/0', '4/0', 250, 300, 350, 500, 700, 750];
 
         let startIndex;
 
