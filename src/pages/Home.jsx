@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { ForwardIcon } from "../components/icons/ForwardIcon.jsx";
 import { WireIcon } from "../components/icons/WireIcon.jsx";
-// import { CalculatorICon } from "../components/icons/CalculatorICon.jsx";
+import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
 
 import '../styles/pages/Home.scss';
 import home from '../assets/home-splash.webp'
