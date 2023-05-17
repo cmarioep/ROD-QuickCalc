@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { ForwardIcon } from "../components/icons/ForwardIcon";
 import { WireIcon } from "../components/icons/WireIcon";
+import { CalculatorICon } from "../components/icons/CalculatorICon";
 
 import '../styles/pages/Home.scss';
 
@@ -17,7 +18,7 @@ export const Home = () => {
             <ul className="home__items">
                 <li className="home__items__item">
                     <Link to="/voltagedrop">
-                        <ForwardIcon />
+                        <CalculatorICon />
                         <span>Caida de Tensión</span>
                     </Link>
                 </li>
