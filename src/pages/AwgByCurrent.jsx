@@ -1,40 +1,33 @@
 import { useEffect, useState } from 'react';
-
 import { useForm } from '../hooks/useForm';
 import { getAWGByCurrent } from '../utils/getAwgByCurrent.js';
 import { checkVoltageDrop } from '../utils/getVoltageDrop.js';
-
-
 import '../styles/pages/CurrentCapacity.scss';
 
 export const AwgByCurrent = () => {
-
-    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, long, formState, onInputChange } = useForm(
-        {
-            material: 'Cu',
-            temperature: '75',
-            environmentTemperature: '26',
-            occupation: '3',
-            current: '',
-            type: 'trifasico',
-            voltage: '208',
-            fp: '0.9',
-            conduit: 'PVC',
-            long: ''
-        }
-    );
+    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, long, formState, onInputChange } = useForm({
+        material: 'Cu',
+        temperature: '75',
+        environmentTemperature: '26',
+        occupation: '3',
+        current: '',
+        type: 'trifasico',
+        voltage: '208',
+        fp: '0.9',
+        conduit: 'PVC',
+        long: '',
+    });
 
     const [awg, setAwg] = useState('');
-
-    const [awgByVoltageDrop, setAwgByVoltageDrop] = useState(awg);
-
-    const [voltageDrop, setVoltageDrop] = useState(false);
+    const [awgByVoltageDrop, setAwgByVoltageDrop] = useState('');
+    const [showVoltageDrop, setShowVoltageDrop] = useState(false);
 
 
     useEffect(() => {
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
         console.log(formState);
     }, [formState]);
+
 
     useEffect(() => {
         setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'amperios', current, awg, long));
@@ -45,9 +38,9 @@ export const AwgByCurrent = () => {
     useEffect(() => {
         const handleViewportChange = () => {
             if (window.innerWidth > 688) {
-                setVoltageDrop(true);
+                setShowVoltageDrop(true);
             } else {
-                setVoltageDrop(false);
+                setShowVoltageDrop(false);
             }
         };
 
@@ -61,12 +54,17 @@ export const AwgByCurrent = () => {
     }, []);
 
 
+    const handleSubmit = (e) => {
+        e.preventDefault(); // Evitar que se envíe el formulario
+        setShowVoltageDrop(!showVoltageDrop);
+    };
+
 
     return (
-        <div className='current-capacity'>
 
-            <form className='current-capacity__container'>
-
+        <form className="current-capacity" onSubmit={handleSubmit}>
+            {/* Resto de los elementos de formulario para el cálculo de capacidad de corriente */}
+            <div className="current-capacity__container">
                 <div className='system-options'>
                     <p>Material:</p>
                     <div className='radio-input'>
@@ -90,7 +88,6 @@ export const AwgByCurrent = () => {
                         </label>
                     </div>
                 </div>
-
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura del Conductor:</label>
                     <select id="awg" name="temperature" onChange={onInputChange} defaultValue="75">
@@ -100,7 +97,6 @@ export const AwgByCurrent = () => {
                         <option value="90">90 °C</option>
                     </select>
                 </div>
-
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura Ambiente:</label>
                     <select id="awg" name="environmentTemperature" onChange={onInputChange} defaultValue="30">
@@ -117,7 +113,6 @@ export const AwgByCurrent = () => {
                         <option value="80">71-80 °C</option>
                     </select>
                 </div>
-
                 <div className="label-input">
                     <label htmlFor="awg">Portadores de Corriente:</label>
                     <select id="awg" name="occupation" onChange={onInputChange} defaultValue="3">
@@ -131,7 +126,6 @@ export const AwgByCurrent = () => {
                         <option value="100">De 41 y más</option>
                     </select>
                 </div>
-
                 <div className="label-input">
                     <label htmlFor="voltage">Corriente:</label>
                     <input
@@ -144,17 +138,19 @@ export const AwgByCurrent = () => {
                         onChange={onInputChange}
                     />
                 </div>
-
-                <h3 className='system-result system-result--unshadow'>
-                    Calibre AWG: {(awg) ? awg : null}
-                    <span>Por  capacidad de corriente </span>
-                    {(awg) ? <div className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Verificar Caida de Tension</div> : null}
+                <h3 className="system-result system-result--unshadow">
+                    Calibre AWG: {awg || null}
+                    <span>Por capacidad de corriente</span>
+                    {awg && (
+                        <div className="btn-primary" onClick={handleSubmit}>
+                            Verificar Caida de Tension
+                        </div>
+                    )}
                 </h3>
+            </div>
 
-            </form>
-
-            {(voltageDrop) ? <form className='current-capacity__container current-capacity__voltage-dropchecker'>
-
+            <div className= {`voltage-dropchecker ${showVoltageDrop ? 'show' : 'hide'}`}>
+                {/* Elementos de formulario para la verificación de caída de tensión */}
                 <div className='system-options'>
                     <p>Sistema:</p>
                     <div className='radio-input'>
@@ -240,20 +236,15 @@ export const AwgByCurrent = () => {
                     />
                 </div>
 
-                <h3 className='system-result system-result--unshadow'>
+                <h3 className="system-result system-result--unshadow">
                     Calibre AWG: {awgByVoltageDrop}
-                    <span>Por  Caida de Tensión</span>
-                    <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
+                    <span>Por Caida de Tensión</span>
+                    <button className="btn-primary" onClick={handleSubmit}>
+                        Aceptar
+                    </button>
                 </h3>
+            </div>
+        </form>
 
-
-
-            </form> : null}
-
-
-
-
-        </div>
-    )
-
-}
+    );
+};

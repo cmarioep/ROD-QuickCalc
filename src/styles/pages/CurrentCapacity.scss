@@ -40,23 +40,29 @@
         }
     }
 
-    &__voltage-dropchecker {
-        position: absolute;
+}
 
-        width: 87.5%;
-        height: 420px;
-        padding: 1rem;
-        border-radius: 5px;
-        border: 1px solid $clr-primary;
+.voltage-dropchecker {
+    position: absolute;
 
-        background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    display: none;
 
-        @include mediaquery(intermediate) {
-            position: unset;
-            width: 50%;
-            height: 100%;
-            padding: 1.5rem;
-        }
+    width: 87.5%;
+    height: 420px;
+    padding: 1rem;
+    border-radius: 5px;
+    border: 1px solid $clr-primary;
+
+    background-color: white;
+
+    @include mediaquery(intermediate) {
+        position: initial;
+        width: 50%;
+        height: 100%;
+        padding: 1.5rem;
     }
 }
 
@@ -77,4 +83,8 @@
     @include mediaquery(intermediate) {
         display: none;
     }
+}
+
+.show {
+    display: flex;
 }

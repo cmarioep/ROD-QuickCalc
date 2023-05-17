@@ -67,12 +67,7 @@ export const getVoltageDrop = (type, material, conduit, voltage, fp, loadType, l
     fp = Number(fp);
     long = Number(long);
 
-    console.log('en voltage drop')
-
     const current = getLoadCurrent(type, voltage, loadType, loadCurrent);
-
-    console.log('current', current)
-
 
     let deltaDrop = getEffectiveImpedance(material, conduit, awg, fp) * (long / 1000) * current;
 
@@ -93,15 +88,11 @@ export const getVoltageDrop = (type, material, conduit, voltage, fp, loadType, l
 
 export const checkVoltageDrop = (type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long) => {
 
-    console.log('calibre', awg)
-
     const initialResult = getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long);
-    console.log('Caida de tension:', initialResult);
 
     if (!initialResult) return;
 
     if (initialResult <= 3) {
-        console.log('menor al 3', initialResult);
         return awg;
     } else {
         const awgList = [14, 12, 10, 8, 6, 4, 2, '1/0', '2/0', '4/0', 250, 300, 350, 500, 700, 750];
@@ -115,17 +106,12 @@ export const checkVoltageDrop = (type, material, conduit, voltage, fp, loadType,
             }
         }
 
-        console.log('index', startIndex)
-
         let result;
 
         for (let i = startIndex; i < awgList.length; i++) {
             const newAwg = awgList[i];
-            console.log('nuevo calibre', newAwg);
             result = getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, newAwg, long);
-            console.log('nueva drop', result)
             if (result <= 3) {
-                console.log('nuevo calibre', newAwg);
                 return newAwg;
             }
         }
