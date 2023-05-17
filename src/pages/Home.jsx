@@ -15,8 +15,8 @@ export const Home = () => {
             </figure>
 
             <ul className="home__items">
-                <li>
-                    <Link className="home__items__item" to="/voltagedrop">
+                <li className="home__items__item">
+                    <Link to="/voltagedrop">
                         <ForwardIcon />
                         <span>Caida de Tensión</span>
                     </Link>
@@ -28,8 +28,8 @@ export const Home = () => {
                     </Link>
 
                 </li>
-                <li>
-                    <Link className="home__items__item" to="/currentcapacity">
+                <li className="home__items__item">
+                    <Link to="/currentcapacity">
                         <ForwardIcon />
                         <span>Llenado de Bandeja</span>
                     </Link>
