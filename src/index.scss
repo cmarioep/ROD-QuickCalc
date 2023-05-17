@@ -9,6 +9,14 @@
     font-family: 'Roboto', sans-serif;
 }
 
+html {
+    /* Para navegadores WebKit */
+    height: -webkit-fill-available;
+    /* Para navegadores que no son WebKit */
+    height: fill-available;
+    height: calc(env(safe-area-inset-top) + env(safe-area-inset-bottom) + 100vh);
+}
+
 body {
 
     @include mediaquery(intermediate) {
