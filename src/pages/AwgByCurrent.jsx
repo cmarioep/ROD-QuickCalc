@@ -141,15 +141,10 @@ export const AwgByCurrent = () => {
                 <h3 className="system-result system-result--unshadow">
                     Calibre AWG: {awg || null}
                     <span>Por capacidad de corriente</span>
-                    {awg && (
-                        <div className="btn-primary" onClick={handleSubmit}>
-                            Verificar Caida de Tension
-                        </div>
-                    )}
                 </h3>
             </div>
 
-            <div className= {`voltage-dropchecker ${showVoltageDrop ? 'show' : 'hide'}`}>
+            <div className={`voltage-dropchecker ${showVoltageDrop ? 'show' : null}`}>
                 {/* Elementos de formulario para la verificación de caída de tensión */}
                 <div className='system-options'>
                     <p>Sistema:</p>
@@ -239,9 +234,6 @@ export const AwgByCurrent = () => {
                 <h3 className="system-result system-result--unshadow">
                     Calibre AWG: {awgByVoltageDrop}
                     <span>Por Caida de Tensión</span>
-                    <button className="btn-primary" onClick={handleSubmit}>
-                        Aceptar
-                    </button>
                 </h3>
             </div>
         </form>

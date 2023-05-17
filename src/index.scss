@@ -2,7 +2,7 @@
 
 * {
     box-sizing: border-box;
-    // overflow: hidden;
+    overflow: hidden;
     margin: 0;
     padding: 0;
 
@@ -10,9 +10,7 @@
 }
 
 html {
-    /* Para navegadores WebKit */
     height: -webkit-fill-available;
-    /* Para navegadores que no son WebKit */
     height: fill-available;
     height: calc(env(safe-area-inset-top) + env(safe-area-inset-bottom) + 100vh);
 }
