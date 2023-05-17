@@ -65,7 +65,6 @@ export const getVoltageDrop = (type, material, conduit, voltage, fp, loadType, l
     voltage = Number(voltage);
     loadCurrent = Number(loadCurrent);
     fp = Number(fp);
-    awg = Number(awg);
     long = Number(long);
 
     console.log('en voltage drop')
@@ -106,11 +105,23 @@ export const checkVoltageDrop = (type, material, conduit, voltage, fp, loadType,
         return awg;
     } else {
         const awgList = [14, 12, 10, 8, 6, 4, 2, '1/0', '2/0', '4/0', 250, 350, 400, 500, 750];
-        const startIndex = awgList.indexOf(awg) + 1; // get index of initial awg and add 1
-        console.log('startIndex', startIndex, 'awg', awg);
+
+        let startIndex;
+
+        for (let i = 0; i < awgList.length; i++) {
+            if (awgList[i] == awg) {
+                startIndex = i + 1;
+                break;
+            }
+        }
+
+        console.log('index', startIndex)
+
         let result;
+
         for (let i = startIndex; i < awgList.length; i++) {
             const newAwg = awgList[i];
+            console.log('nuevo calibre', newAwg);
             result = getVoltageDrop(type, material, conduit, voltage, fp, loadType, loadCurrent, newAwg, long);
             console.log('nueva drop', result)
             if (result <= 3) {
