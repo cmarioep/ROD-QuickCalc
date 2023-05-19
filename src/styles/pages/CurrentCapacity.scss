@@ -9,7 +9,7 @@
 
     height: 100vh;
     padding: 1rem;
-    padding-top: $navbar-heigh + 1vh;
+    padding-top: $navbar-heigh + 3vh;
     padding-bottom: 0.5rem;
 
 
@@ -46,15 +46,21 @@
 }
 
 .voltage-dropchecker {
+    position: absolute;
+    top: $navbar-heigh + 3vh;
+    left: 50%;
+    transform: translateX(-50%);
+
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
 
-    width: 100%;
+    width: 92%;
     height: 50vh;
     padding: 1rem;
     border-radius: 5px;
     border: 1px solid $clr-primary;
+    background-color: white;
 
     box-shadow: 0px 8px 5px -5px rgba(59, 57, 57, 0.5);
 
@@ -81,7 +87,7 @@
     background-color: $clr-primary;
 
     @include mediaquery(intermediate) {
-        display: none;
+        // display: none;
     }
 }
 
