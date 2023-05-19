@@ -10,7 +10,7 @@ export const VoltageDrop = () => {
     const { type, material, conduit, voltage, fp, loadType, loadCurrent, awg, long, formState, onInputChange, onResetForm } = useForm(
         {
             type: 'trifasico',
-            voltage: '',
+            voltage: '208',
             loadType: 'amperios',
             loadCurrent: '',
             fp: '0.9',
