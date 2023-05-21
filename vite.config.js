@@ -12,6 +12,9 @@ export default defineConfig({
     VitePWA(
       {
         registerType: 'autoUpdate',
+        workbox: {
+          globPatterns: ['**/*.{js,css,html,png}'],
+        },
         manifest: {
           name: 'ROD-QuickCalc',
           short_name: 'QuickCalc',

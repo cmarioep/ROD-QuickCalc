@@ -4,7 +4,7 @@ import { WireIcon } from "../components/icons/WireIcon.jsx";
 import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
 
 import '../styles/pages/Home.scss';
-import home from '../assets/home-splash.webp'
+import home from '../assets/home-splash.png'
 
 
 export const Home = () => {
