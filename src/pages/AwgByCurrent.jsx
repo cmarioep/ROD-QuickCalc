@@ -1,6 +1,8 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
 
+import { ShapeDivider } from "../components/ShapeDivider.jsx";
+
 import { useForm } from '../hooks/useForm';
 import { getAWGByCurrent } from '../utils/getAwgByCurrent.js';
 import { checkVoltageDrop } from '../utils/getVoltageDrop.js';
@@ -249,7 +251,7 @@ export const AwgByCurrent = () => {
 
             </form>, document.body)}
 
-
+            <ShapeDivider />
         </div>
     )
 

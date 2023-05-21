@@ -37,6 +37,7 @@ export const Home = () => {
                     </Link>
                 </li>
             </ul>
+
         </div>
     )
 

@@ -1,6 +1,8 @@
 @use '../utils/' as *;
 
 .formulario {
+    position: relative;
+    z-index: 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
