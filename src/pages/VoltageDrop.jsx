@@ -218,7 +218,6 @@ export const VoltageDrop = () => {
 
                 <h3 className='system-result grid-system-result'>%Reg: {(voltageDrop) ? voltageDrop : null} </h3>
 
-                <ShapeDivider />
             </form>
 
         </>
