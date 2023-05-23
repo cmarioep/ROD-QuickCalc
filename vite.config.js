@@ -13,7 +13,7 @@ export default defineConfig({
       {
         registerType: 'autoUpdate',
         workbox: {
-          globPatterns: ['**/*.{js,css,html,png}'],
+          globPatterns: ['**/*.{js,css,html,png,webp}'],
         },
         manifest: {
           name: 'ROD-QuickCalc',

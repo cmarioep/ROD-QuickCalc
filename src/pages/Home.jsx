@@ -5,7 +5,7 @@ import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
 import { PieChart } from "../components/icons/PieChart.jsx";
 
 import '../styles/pages/Home.scss';
-import home from '../assets/home-splash.png'
+import home from '../assets/home-splash.webp'
 
 
 export const Home = () => {
