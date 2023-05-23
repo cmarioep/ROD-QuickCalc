@@ -31,9 +31,9 @@ export const Home = () => {
 
                 </li>
                 <li className="home__items__item">
-                    <Link to="/currentcapacity">
+                    <Link to="/conduitfill">
                         <ForwardIcon />
-                        <span>Llenado de Bandeja</span>
+                        <span>Ocupación de Ductos</span>
                     </Link>
                 </li>
             </ul>

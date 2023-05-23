@@ -7,6 +7,7 @@ const modulesRoutes = {
     '/': 'Cálculo Rápido',
     '/voltagedrop': 'Caida de Tensión',
     '/awgbycurrent': 'Selección de Alimentador',
+    '/conduitfill': 'Ocupación de Ductos',
 }
 
 const getModule = (path) => {
