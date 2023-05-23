@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import { ForwardIcon } from "../components/icons/ForwardIcon.jsx";
 import { WireIcon } from "../components/icons/WireIcon.jsx";
 import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
+import { PieChart } from "../components/icons/PieChart.jsx";
 
 import '../styles/pages/Home.scss';
 import home from '../assets/home-splash.png'
@@ -32,7 +33,7 @@ export const Home = () => {
                 </li>
                 <li className="home__items__item">
                     <Link to="/conduitfill">
-                        <ForwardIcon />
+                        <PieChart />
                         <span>Ocupación de Ductos</span>
                     </Link>
                 </li>
