@@ -90,3 +90,22 @@
         display: none;
     }
 }
+
+.btn-secondary {
+    width: 100%;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+
+    color: white;
+    text-align: center;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+
+    cursor: pointer;
+    background-color: $clr-secondary;
+
+    @include mediaquery(intermediate) {
+        display: none;
+    }
+}

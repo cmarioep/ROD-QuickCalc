@@ -244,7 +244,7 @@ export const AwgByCurrent = () => {
                 <h3 className='system-result system-result--unshadow'>
                     Calibre AWG: {awgByVoltageDrop}
                     <span>Por  Caida de Tensión</span>
-                    <button className='btn-primary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
+                    <button className='btn-secondary ' onClick={() => setVoltageDrop(!voltageDrop)}>Aceptar</button>
                 </h3>
 
             </form>, document.body)}
