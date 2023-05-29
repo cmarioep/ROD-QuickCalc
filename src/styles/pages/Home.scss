@@ -4,7 +4,11 @@
 .home {
     width: 100%;
     height: 100vh;
-    // padding-top: $navbar-heigh;
+    padding-top: $navbar-heigh;
+
+    @include mediaquery(intermediate) {
+        height: 100%;
+    }
 
     figure {
         display: flex;
@@ -12,8 +16,17 @@
         width: 100%;
         height: 50vh;
 
+        @include mediaquery(intermediate) {
+            height: 50%;
+        }
+
         img {
             width: 100%;
+            height: 100%;
+
+            @include mediaquery(intermediate) {
+                    opacity: 0.7;
+            }
         }
     }
 
@@ -24,8 +37,12 @@
         width: 100%;
         height: 50vh;
 
+        @include mediaquery(intermediate) {
+            height: 50%;
+        }
+
         // background-image: linear-gradient(to top, #d1d5e5 30%, #e1e3ed 70%, #f1f1f6, #ffffff);
-        background-image: linear-gradient(to top, #d1d5e5, #dddfeb 40% ,#e9e9f2 80%, #f4f4f8, #ffffff);
+        background-image: linear-gradient(to top, #d1d5e5, #dddfeb 40%, #e9e9f2 80%, #f4f4f8, #ffffff);
 
         &__item {
             position: relative;

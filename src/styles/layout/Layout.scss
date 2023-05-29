@@ -1,6 +1,8 @@
 @use '../utils/' as *;
 
 .layout {
+    position: relative;
+
     width: 100%;
     max-width: 420px;
     height: 100vh;
