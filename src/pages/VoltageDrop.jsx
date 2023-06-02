@@ -172,7 +172,6 @@ export const VoltageDrop = () => {
                             <option value="300">300</option>
                             <option value="350">350</option>
                             <option value="500">500</option>
-                            <option value="700">700</option>
                             <option value="750">750</option>
                         </select>
                     </div>
