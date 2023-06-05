@@ -1,0 +1,10 @@
+@use '../utils/' as *;
+
+.conduit-fill {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    padding-top: $navbar-heigh + 3vh;
+}

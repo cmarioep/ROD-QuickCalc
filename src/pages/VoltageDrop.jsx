@@ -1,7 +1,5 @@
 import { useEffect, useState } from 'react';
 
-import { ShapeDivider } from "../components/ShapeDivider.jsx";
-
 import { useForm } from '../hooks/useForm';
 import { getVoltageDrop } from '../utils/getVoltageDrop';
 
