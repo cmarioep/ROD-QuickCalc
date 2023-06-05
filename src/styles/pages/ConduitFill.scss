@@ -6,5 +6,11 @@
     align-items: center;
     justify-content: center;
 
+    padding: 1rem;
     padding-top: $navbar-heigh + 3vh;
+
+    &__conduit {
+        width: 100%;
+        border: 1px solid red;
+    }
 }

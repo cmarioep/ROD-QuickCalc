@@ -2,7 +2,7 @@ import { useForm } from '../hooks/useForm';
 
 import '../styles/pages/ConduitFill.scss';
 
-export const ConduitFill= () => {
+export const ConduitFill = () => {
 
     const { conduitType, diameter, awg, awgType, quantity, formState, onInputChange, onResetForm } = useForm(
         {
@@ -18,11 +18,30 @@ export const ConduitFill= () => {
         <div className="conduit-fill">
             <h3>Ocupación de Ductos</h3>
 
-            <div>
-                <p>Tipo de Ducto: </p>
-                <p>{conduitType}</p>
-                <p>Diametro: </p>
-                <p>{diameter}</p>
+            <div className="conduit-fill__conduit">
+
+                <div className="label-input">
+                    <label htmlFor="fp">Tipo de Ducto:</label>
+                    <select id="conduitType" name="conduitType" onChange={onInputChange} defaultValue="THWN">
+                        <option value="">Selecciona una opción</option>
+                        <option value="PVC">PVC</option>
+                        <option value="EMT">EMT</option>
+                        <option value="IMC">IMC</option>
+                        <option value="SCH40 ">SCH40 </option>
+                    </select>
+                </div>
+
+                <div className="label-input">
+                        <label htmlFor="fp">Diametro:</label>
+                        <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="3/4">
+                            <option value="">Selecciona una opción</option>
+                            <option value="1">1"</option>
+                            <option value="3/4">3/4"</option>
+                            <option value="1/2">1/2"</option>
+                            <option value="1-1/4">1-1/4"</option>
+                        </select>
+                    </div>
+
 
             </div>
         </div>
