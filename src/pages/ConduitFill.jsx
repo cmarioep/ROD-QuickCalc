@@ -16,9 +16,10 @@ export const ConduitFill = () => {
 
     return (
         <div className="conduit-fill">
-            <h3>Ocupación de Ductos</h3>
 
-            <div className="conduit-fill__conduit">
+            <div className='formulario__container'>
+
+                <p>Tipo de Ducto</p>
 
                 <div className="label-input">
                     <label htmlFor="fp">Tipo de Ducto:</label>
@@ -32,18 +33,22 @@ export const ConduitFill = () => {
                 </div>
 
                 <div className="label-input">
-                        <label htmlFor="fp">Diametro:</label>
-                        <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="3/4">
-                            <option value="">Selecciona una opción</option>
-                            <option value="1">1"</option>
-                            <option value="3/4">3/4"</option>
-                            <option value="1/2">1/2"</option>
-                            <option value="1-1/4">1-1/4"</option>
-                        </select>
-                    </div>
-
+                    <label htmlFor="fp">Diametro:</label>
+                    <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="3/4">
+                        <option value="">Selecciona una opción</option>
+                        <option value="1">1"</option>
+                        <option value="3/4">3/4"</option>
+                        <option value="1/2">1/2"</option>
+                        <option value="1-1/4">1-1/4"</option>
+                    </select>
+                </div>
 
             </div>
+
+            <div className='formulario__container'>
+                <p>Conductores</p>
+            </div>
+
         </div>
     )
 
