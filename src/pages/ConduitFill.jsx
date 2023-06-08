@@ -34,7 +34,7 @@ export const ConduitFill = () => {
 
                 <div className="label-input">
                     <label htmlFor="fp">Diametro:</label>
-                    <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="3/4">
+                    <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="Seleccionar">
                         <option value="">Seleccionar</option>
                         <option value="1">1"</option>
                         <option value="3/4">3/4"</option>
