@@ -24,7 +24,7 @@ export const ConduitFill = () => {
                 <div className="label-input">
                     <label htmlFor="fp">Tipo de Ducto:</label>
                     <select id="conduitType" name="conduitType" onChange={onInputChange} defaultValue="THWN">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="PVC">PVC</option>
                         <option value="EMT">EMT</option>
                         <option value="IMC">IMC</option>
@@ -35,7 +35,7 @@ export const ConduitFill = () => {
                 <div className="label-input">
                     <label htmlFor="fp">Diametro:</label>
                     <select id="diameter" name="diameter" onChange={onInputChange} defaultValue="3/4">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="1">1"</option>
                         <option value="3/4">3/4"</option>
                         <option value="1/2">1/2"</option>

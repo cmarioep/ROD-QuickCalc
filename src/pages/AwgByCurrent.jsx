@@ -95,7 +95,7 @@ export const AwgByCurrent = () => {
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura del Conductor:</label>
                     <select id="awg" name="temperature" onChange={onInputChange} defaultValue="75">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="60">60 °C</option>
                         <option value="75">75 °C</option>
                         <option value="90">90 °C</option>
@@ -105,7 +105,7 @@ export const AwgByCurrent = () => {
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura Ambiente:</label>
                     <select id="awg" name="environmentTemperature" onChange={onInputChange} defaultValue="30">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="25">21-25 °C</option>
                         <option value="30">26-30 °C</option>
                         <option value="35">31-35 °C</option>
@@ -122,7 +122,7 @@ export const AwgByCurrent = () => {
                 <div className="label-input">
                     <label htmlFor="awg">Portadores de Corriente:</label>
                     <select id="awg" name="occupation" onChange={onInputChange} defaultValue="3">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="3"> De 1 a 3</option>
                         <option value="6">De 4 a 6</option>
                         <option value="9">De 7 a 9</option>
@@ -196,7 +196,7 @@ export const AwgByCurrent = () => {
                 <div className="label-input">
                     <label htmlFor="fp">Factor de Potencia:</label>
                     <select id="fp" name="fp" onChange={onInputChange} defaultValue="0.9">
-                        <option value="">Selecciona una opción</option>
+                        <option value="">Seleccionar</option>
                         <option value="1">1</option>
                         <option value="0.95">0.95</option>
                         <option value="0.9">0.9</option>

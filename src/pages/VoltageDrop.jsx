@@ -115,7 +115,7 @@ export const VoltageDrop = () => {
                     <div className="label-input">
                         <label htmlFor="fp">Factor de Potencia:</label>
                         <select id="fp" name="fp" onChange={onInputChange} defaultValue="0.9">
-                            <option value="">Selecciona una opción</option>
+                            <option value="">Seleccionar</option>
                             <option value="1">1</option>
                             <option value="0.95">0.95</option>
                             <option value="0.9">0.9</option>
@@ -155,7 +155,7 @@ export const VoltageDrop = () => {
                     <div className="label-input">
                         <label htmlFor="awg">Calibre AWG:</label>
                         <select id="awg" name="awg" onChange={onInputChange} defaultValue="">
-                            <option value="">Selecciona una opción</option>
+                            <option value="">Seleccionar</option>
                             <option value="14">14</option>
                             <option value="12">12</option>
                             <option value="10">10</option>
