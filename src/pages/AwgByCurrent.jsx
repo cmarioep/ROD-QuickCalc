@@ -38,7 +38,7 @@ export const AwgByCurrent = () => {
     }, [formState]);
 
     useEffect(() => {
-        setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'amperios', current, awg, long));
+        setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'Amperios', current, awg, long));
         console.log('checker', awgByVoltageDrop);
     }, [awg, type, voltage, fp, conduit, long]);
 

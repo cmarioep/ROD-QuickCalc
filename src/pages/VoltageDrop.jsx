@@ -12,7 +12,7 @@ export const VoltageDrop = () => {
         {
             type: 'trifasico',
             voltage: '208',
-            loadType: 'amperios',
+            loadType: 'Amperios',
             loadCurrent: '',
             fp: '0.9',
             material: 'Cu',
@@ -83,18 +83,18 @@ export const VoltageDrop = () => {
                             <label htmlFor="loadType">kVA
                                 <input
                                     type="radio"
-                                    value="kva"
+                                    value="kVA"
                                     name="loadType"
-                                    checked={loadType === "kva"}
+                                    checked={loadType === "kVA"}
                                     onChange={onInputChange}
                                 />
                             </label>
                             <label htmlFor="loadType">Amperios
                                 <input
                                     type="radio"
-                                    value="amperios"
+                                    value="Amperios"
                                     name="loadType"
-                                    checked={loadType === "amperios"}
+                                    checked={loadType === "Amperios"}
                                     onChange={onInputChange}
                                 />
                             </label>
@@ -108,7 +108,7 @@ export const VoltageDrop = () => {
                             id="loadCurrent"
                             name="loadCurrent"
                             autoComplete='off'
-                            placeholder='kVA o Amperios'
+                            placeholder={loadType}
                             value={loadCurrent}
                             onChange={onInputChange}
                         />

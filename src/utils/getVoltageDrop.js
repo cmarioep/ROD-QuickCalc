@@ -36,7 +36,7 @@ const getEffectiveImpedance = (material, conduit, awg, fp) => {
 }
 
 
-const getLoadCurrent = (type, voltage, loadType = 'amperios', loadCurrent) => {
+const getLoadCurrent = (type, voltage, loadType = 'Amperios', loadCurrent) => {
 
     voltage = Number(voltage);
 
@@ -48,12 +48,12 @@ const getLoadCurrent = (type, voltage, loadType = 'amperios', loadCurrent) => {
         voltage = voltage;
     }
 
-    if (loadType === 'kva') {
+    if (loadType === 'kVA') {
         loadCurrent = (loadCurrent * 1000) / voltage;
         return Number(loadCurrent);
     }
 
-    if (loadType === 'amperios') {
+    if (loadType === 'Amperios') {
         return Number(loadCurrent);
     }
 }
