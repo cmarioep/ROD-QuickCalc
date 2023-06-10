@@ -1,6 +1,8 @@
 import { createPortal } from 'react-dom';
 import { useEffect, useState } from 'react';
 
+import Swal from 'sweetalert2';
+
 import { useForm } from '../hooks/useForm';
 import { getAWGByCurrent } from '../utils/getAwgByCurrent.js';
 import { checkVoltageDrop } from '../utils/getVoltageDrop.js';
@@ -30,6 +32,17 @@ export const AwgByCurrent = () => {
     const [awgByVoltageDrop, setAwgByVoltageDrop] = useState(awg);
 
     const [voltageDrop, setVoltageDrop] = useState(false);
+
+    useEffect(() => {
+        if (temperature === '90') {
+            Swal.fire({
+                icon: 'warning',
+                confirmButtonColor: '#54893e',
+                title: 'Importante',
+                text: 'Se deben considerar terminales a 90°',
+            })
+        }
+    }, [temperature]);
 
 
     useEffect(() => {
