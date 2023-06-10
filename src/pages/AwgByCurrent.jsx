@@ -12,10 +12,10 @@ import '../styles/pages/CurrentCapacity.scss';
 
 export const AwgByCurrent = () => {
 
-    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, long, formState, onInputChange } = useForm(
+    const { material, temperature, environmentTemperature, occupation, current, type, voltage, fp, conduit, long, formState, onInputChange, hardChange } = useForm(
         {
             material: 'Cu',
-            temperature: '75',
+            temperature: '60',
             environmentTemperature: '26',
             occupation: '3',
             current: '',
@@ -33,6 +33,27 @@ export const AwgByCurrent = () => {
 
     const [voltageDrop, setVoltageDrop] = useState(false);
 
+
+    // show alert if current is > 100 and current is 60
+    useEffect(() => {
+        if (current !== '' && current > 100 && temperature === '60') {
+            console.log('mayor a 100', current);
+
+            Swal.fire({
+                icon: 'warning',
+                confirmButtonColor: '#54893e',
+                title: 'Importante',
+                text:
+                    'La corriente máxima permitida para conductores de 60° es de 100A, se deberá seleccionar un conductor a 75°',
+            });
+
+            hardChange('temperature', '75');
+            console.log(formState);
+        }
+    }, [current, temperature]);
+
+
+    // show alert if temperature is 90°
     useEffect(() => {
         if (temperature === '90') {
             Swal.fire({
@@ -107,7 +128,7 @@ export const AwgByCurrent = () => {
 
                 <div className="label-input">
                     <label htmlFor="awg">Temperatura del Conductor:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="75">
+                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="60">
                         <option value="">Seleccionar</option>
                         <option value="60">60 °C</option>
                         <option value="75">75 °C</option>
