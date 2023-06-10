@@ -60,15 +60,17 @@ export const VoltageDrop = () => {
 
                     <div className="label-input">
                         <label htmlFor="voltage">Tensión:</label>
-                        <input
-                            type="number"
-                            id="voltage"
-                            name="voltage"
-                            autoComplete='off'
-                            placeholder='Voltios'
-                            value={voltage}
-                            onChange={onInputChange}
-                        />
+                        <select id="voltage" name="voltage" onChange={onInputChange} defaultValue="208">
+                            <option value="">Seleccionar</option>
+                            <option value="120">120 V</option>
+                            <option value="127">127 V</option>
+                            <option value="208">208 V</option>
+                            <option value="220">220 V</option>
+                            <option value="240">240 V</option>
+                            <option value="277">277 V</option>
+                            <option value="440">440 V</option>
+                            <option value="460">460 V</option>
+                        </select>
                     </div>
 
                 </div>
