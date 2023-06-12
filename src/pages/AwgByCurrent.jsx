@@ -49,8 +49,15 @@ export const AwgByCurrent = () => {
 
             hardChange('temperature', '75');
             console.log(formState);
+
+            // Actualizar el valor del input "temperature" después de cambiar el estado
+            const temperatureInput = document.getElementById('temperature');
+            if (temperatureInput) {
+                temperatureInput.value = '75';
+            }
         }
     }, [current, temperature]);
+
 
 
     // show alert if temperature is 90°
@@ -127,8 +134,8 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <div className="label-input">
-                    <label htmlFor="awg">Temperatura del Conductor:</label>
-                    <select id="awg" name="temperature" onChange={onInputChange} defaultValue="60">
+                    <label htmlFor="temperature">Temperatura del Conductor:</label>
+                    <select id="temperature" name="temperature" onChange={onInputChange} defaultValue="60">
                         <option value="">Seleccionar</option>
                         <option value="60">60 °C</option>
                         <option value="75">75 °C</option>
@@ -137,8 +144,8 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <div className="label-input">
-                    <label htmlFor="awg">Temperatura Ambiente:</label>
-                    <select id="awg" name="environmentTemperature" onChange={onInputChange} defaultValue="30">
+                    <label htmlFor="environmentTemperature">Temperatura Ambiente:</label>
+                    <select id="environmentTemperature" name="environmentTemperature" onChange={onInputChange} defaultValue="30">
                         <option value="">Seleccionar</option>
                         <option value="25">21-25 °C</option>
                         <option value="30">26-30 °C</option>
@@ -154,8 +161,8 @@ export const AwgByCurrent = () => {
                 </div>
 
                 <div className="label-input">
-                    <label htmlFor="awg">Portadores de Corriente:</label>
-                    <select id="awg" name="occupation" onChange={onInputChange} defaultValue="3">
+                    <label htmlFor="occupation">Portadores de Corriente:</label>
+                    <select id="occupation" name="occupation" onChange={onInputChange} defaultValue="3">
                         <option value="">Seleccionar</option>
                         <option value="3"> De 1 a 3</option>
                         <option value="6">De 4 a 6</option>
