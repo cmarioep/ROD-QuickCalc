@@ -23,15 +23,16 @@
 
         @include mediaquery(intermediate) {
             align-items: flex-start;
-            height: 50%;
+            height: 55%;
         }
 
         img {
-            width: 100%;
+            width: auto;
+            height: 300px;
 
             @include mediaquery(intermediate) {
-                width: 350px;
-                height: auto;
+                width: auto;
+                height: 250px;
 
                 opacity: 0.7;
             }
@@ -46,7 +47,7 @@
         height: 50vh;
 
         @include mediaquery(intermediate) {
-            height: 50%;
+            height: 45%;
         }
 
         background-image: linear-gradient(to top, #d1d5e5, #dddfeb 40%, #e9e9f2 80%, #f4f4f8, #ffffff);
