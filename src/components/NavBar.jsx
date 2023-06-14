@@ -1,5 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
+import { Link } from "react-router-dom";
+
+import { BackwardIcon } from './icons/BackWardIcon';
 
 import '../styles/components/NavBar.scss';
 
@@ -22,13 +25,21 @@ export const NavBar = () => {
     // Actualizar activeModule cuando la ruta cambie
     useEffect(() => {
         const path = location.pathname;
-        console.log(path);
         const module = getModule(path);
         setActiveModule(module);
     }, [location.pathname, setActiveModule]);
 
     return (
         <nav className="NavBar">
+
+            {
+                (location.pathname !='/') &&
+                <Link to="/">
+                    <BackwardIcon />
+                </Link>
+            }
+
+
             <p>{activeModule}</p>
         </nav>
     );

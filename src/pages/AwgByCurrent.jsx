@@ -75,13 +75,12 @@ export const AwgByCurrent = () => {
 
     useEffect(() => {
         setAwg(getAWGByCurrent(material, temperature, environmentTemperature, occupation, current));
-        console.log(formState);
+        // console.log(formState);
     }, [formState]);
 
     useEffect(() => {
         setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'Amperios', current, awg, long));
-        console.log('checker', awgByVoltageDrop);
-    }, [awg, type, voltage, fp, conduit, long]);
+      }, [awg, type, voltage, fp, conduit, long]);
 
 
     // useEffect(() => {
