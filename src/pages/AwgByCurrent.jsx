@@ -34,7 +34,7 @@ export const AwgByCurrent = () => {
     const [voltageDrop, setVoltageDrop] = useState(false);
 
 
-    // show alert if current is > 100 and current is 60
+    // show alert if current is > 100 and temperature is 60
     useEffect(() => {
         if (current !== '' && current > 100 && temperature === '60') {
             console.log('mayor a 100', current);
@@ -44,16 +44,15 @@ export const AwgByCurrent = () => {
                 confirmButtonColor: '#54893e',
                 title: 'Importante',
                 text:
-                    'La corriente máxima permitida para conductores de 60° es de 100A, se deberá seleccionar un conductor a 75°',
+                    'La corriente máxima permitida para conductores de 60° es de 100A. Seleccionar un conductor a 75°',
             });
 
-            hardChange('temperature', '75');
-            console.log(formState);
+            hardChange('temperature', '');
 
-            // Actualizar el valor del input "temperature" después de cambiar el estado
+            // update input value "temperature"
             const temperatureInput = document.getElementById('temperature');
             if (temperatureInput) {
-                temperatureInput.value = '75';
+                temperatureInput.value = '';
             }
         }
     }, [current, temperature]);
@@ -67,7 +66,7 @@ export const AwgByCurrent = () => {
                 icon: 'warning',
                 confirmButtonColor: '#54893e',
                 title: 'Importante',
-                text: 'Se deben considerar terminales a 90°',
+                text: 'Considerar terminales a 90°',
             })
         }
     }, [temperature]);
@@ -80,7 +79,7 @@ export const AwgByCurrent = () => {
 
     useEffect(() => {
         setAwgByVoltageDrop(checkVoltageDrop(type, material, conduit, voltage, fp, 'Amperios', current, awg, long));
-      }, [awg, type, voltage, fp, conduit, long]);
+    }, [awg, type, voltage, fp, conduit, long]);
 
 
     // useEffect(() => {
