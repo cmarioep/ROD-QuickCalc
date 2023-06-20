@@ -44,7 +44,7 @@ export const AwgByCurrent = () => {
                 confirmButtonColor: '#54893e',
                 title: 'Importante',
                 text:
-                    'La corriente máxima permitida para conductores de 60° es de 100A. Seleccionar un conductor a 75°C',
+                    'La corriente máxima permitida para conductores de 60° es de 100A. Seleccionar un conductor a 75°C.',
             });
 
             hardChange('temperature', '');
@@ -66,7 +66,7 @@ export const AwgByCurrent = () => {
                 icon: 'warning',
                 confirmButtonColor: '#54893e',
                 title: 'Importante',
-                text: 'Considerar terminales a 90°C',
+                text: 'Considerar terminales a 90°C.',
             })
         }
     }, [temperature]);
