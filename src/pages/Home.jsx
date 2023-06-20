@@ -5,7 +5,6 @@ import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
 import { PieChart } from "../components/icons/PieChart.jsx";
 
 import '../styles/pages/Home.scss';
-// import home from '../assets/home-splash.webp';
 import home from '../assets/imagotipo.webp';
 
 
