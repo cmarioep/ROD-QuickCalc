@@ -37,6 +37,12 @@ export const Home = () => {
                         <span>Ocupación de Ductos</span>
                     </Link>
                 </li>
+                <li className="home__items__item">
+                    <Link to="/conduitfill">
+                        <PieChart />
+                        <span>Calcular Corriente</span>
+                    </Link>
+                </li>
             </ul>
 
         </div>
