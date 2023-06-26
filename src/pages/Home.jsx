@@ -3,6 +3,7 @@ import { ForwardIcon } from "../components/icons/ForwardIcon.jsx";
 import { WireIcon } from "../components/icons/WireIcon.jsx";
 import { CalculatorICon } from "../components/icons/CalculatorIcon.jsx";
 import { PieChart } from "../components/icons/PieChart.jsx";
+import { CurrentIcon } from "../components/icons/CurrentIcon.jsx";
 
 import '../styles/pages/Home.scss';
 import home from '../assets/imagotipo.webp';
@@ -39,7 +40,7 @@ export const Home = () => {
                 </li>
                 <li className="home__items__item">
                     <Link to="/getcurrent">
-                        <PieChart />
+                        <CurrentIcon />
                         <span>Calcular Corriente</span>
                     </Link>
                 </li>
