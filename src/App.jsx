@@ -1,6 +1,6 @@
 import { Route, Routes } from "react-router-dom";
 
-import { Home, VoltageDrop, AwgByCurrent, ConduitFill } from "./pages/";
+import { Home, VoltageDrop, AwgByCurrent, ConduitFill, GetCurrent } from "./pages/";
 import { Layout } from "./layout/Layout";
 
 
@@ -16,6 +16,7 @@ function App() {
         <Route path="/voltagedrop" element={<VoltageDrop />} />
         <Route path="/awgbycurrent" element={<AwgByCurrent />} />
         <Route path="/conduitfill" element={<ConduitFill />} />
+        <Route path="/getcurrent" element={<GetCurrent />} />
       </Routes>
     </Layout>
 

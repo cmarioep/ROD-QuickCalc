@@ -11,6 +11,7 @@ const modulesRoutes = {
     '/voltagedrop': 'Caida de Tensión',
     '/awgbycurrent': 'Selección de Alimentador',
     '/conduitfill': 'Ocupación de Ductos',
+    '/getcurrent' :  'Cálculo de Corriente'
 }
 
 const getModule = (path) => {
