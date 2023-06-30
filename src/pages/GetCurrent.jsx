@@ -7,7 +7,7 @@ export const GetCurrent = () => {
 
     const { loadType, load, type, fp, onInputChange, onResetForm } = useForm(
         {
-            loadType: 'KVA',
+            loadType: 'kVA',
             load: '3/',
             fp: '0.9',
             type: 'trifasico',
@@ -28,16 +28,16 @@ export const GetCurrent = () => {
                                 type="radio"
                                 value="kVA"
                                 name="loadType"
-                                checked={loadType === "KVA"}
+                                checked={loadType === "kVA"}
                                 onChange={onInputChange}
                             />
                         </label>
-                        <label htmlFor="loadType">Amperios
+                        <label htmlFor="loadType">kW
                             <input
                                 type="radio"
-                                value="Amperios"
+                                value="kW"
                                 name="loadType"
-                                checked={loadType === "Amperios"}
+                                checked={loadType === "kW"}
                                 onChange={onInputChange}
                             />
                         </label>
