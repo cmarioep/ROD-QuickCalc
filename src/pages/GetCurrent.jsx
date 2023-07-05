@@ -72,7 +72,7 @@ export const GetCurrent = () => {
 
             <div className="formulario__container grid-system-type">
 
-                <div className='system-options'>
+                <div className='system-options system-options--three-options'>
                     <p>Sistema:</p>
                     <div className='radio-input'>
                         <label htmlFor="type">Monofásico
@@ -81,6 +81,15 @@ export const GetCurrent = () => {
                                 value="monofasico"
                                 name="type"
                                 checked={type === "monofasico"}
+                                onChange={onInputChange}
+                            />
+                        </label>
+                        <label htmlFor="type">Bifásico
+                            <input
+                                type="radio"
+                                value="bifasico"
+                                name="type"
+                                checked={type === "bifasico"}
                                 onChange={onInputChange}
                             />
                         </label>
