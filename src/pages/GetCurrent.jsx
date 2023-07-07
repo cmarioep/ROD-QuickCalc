@@ -1,4 +1,6 @@
+import { useState } from 'react';
 import { useForm } from '../hooks/useForm';
+
 
 import '../styles/pages/GetCurrent.scss';
 
@@ -8,12 +10,14 @@ export const GetCurrent = () => {
     const { loadType, load, type, fp, onInputChange, onResetForm } = useForm(
         {
             loadType: 'kVA',
-            load: '3/',
+            load: '',
             fp: '0.9',
             type: 'trifasico',
             voltage: '208',
         }
     );
+
+    const [current, setCurrent] = useState(100)
 
     return (
         <div className="get-current">
@@ -122,7 +126,7 @@ export const GetCurrent = () => {
 
             </div>
 
-            <h3 className='system-result grid-system-result'>Corriente: {(true) ? 60 : null} </h3>
+            <h3 className='system-result grid-system-result'>Corriente: {current} </h3>
 
         </div>
     )
