@@ -1,13 +1,14 @@
-import { useState } from 'react';
-import { useForm } from '../hooks/useForm';
+import { useState, useEffect} from 'react';
 
+import { useForm } from '../hooks/useForm';
+import { getLoadCurrent } from '../utils/getCurrent';
 
 import '../styles/pages/GetCurrent.scss';
 
 
 export const GetCurrent = () => {
 
-    const { loadType, load, type, fp, onInputChange, onResetForm } = useForm(
+    const { loadType, load, type, fp, voltage, onInputChange, formState } = useForm(
         {
             loadType: 'kVA',
             load: '',
@@ -17,7 +18,13 @@ export const GetCurrent = () => {
         }
     );
 
-    const [current, setCurrent] = useState(100)
+
+    const [current, setCurrent] = useState('');
+
+    useEffect(() => {
+        setCurrent(getLoadCurrent(loadType, load, fp, type, voltage));
+    }, [formState])
+
 
     return (
         <div className="get-current">
