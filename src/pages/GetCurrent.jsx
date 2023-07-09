@@ -1,4 +1,4 @@
-import { useState, useEffect} from 'react';
+import { useState, useEffect } from 'react';
 
 import { useForm } from '../hooks/useForm';
 import { getLoadCurrent } from '../utils/getCurrent';
@@ -68,7 +68,7 @@ export const GetCurrent = () => {
                     />
                 </div>
 
-                <div className="label-input">
+                {(loadType === 'kW') && <div className="label-input">
                     <label htmlFor="fp">Factor de Potencia:</label>
                     <select id="fp" name="fp" onChange={onInputChange} defaultValue="0.9">
                         <option value="">Seleccionar</option>
@@ -77,7 +77,7 @@ export const GetCurrent = () => {
                         <option value="0.9">0.9</option>
                         <option value="0.85">0.85</option>
                     </select>
-                </div>
+                </div>}
 
             </div>
 
