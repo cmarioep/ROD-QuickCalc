@@ -8,7 +8,6 @@ const parametros = {
 
 
 export const getLoadCurrent = (loadType, load, fp, type, voltage) => {
-
     voltage = Number(voltage);
 
     if (type === 'trifasico') {
@@ -21,12 +20,12 @@ export const getLoadCurrent = (loadType, load, fp, type, voltage) => {
 
     if (loadType === 'kVA') {
         const current = (load * 1000) / voltage;
-        return Number(current);
+        return Number(current.toFixed(2));
     }
 
     if (loadType === 'kW') {
-        const load = load / fp;
-        const current = (load * 1000) / voltage;
-        return Number(current);
+        const loadKVA = load / fp;
+        const current = (loadKVA * 1000) / voltage;
+        return Number(current.toFixed(2));
     }
 }
