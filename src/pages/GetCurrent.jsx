@@ -133,7 +133,11 @@ export const GetCurrent = () => {
 
             </div>
 
-            <h3 className='system-result grid-system-result'>Corriente: {current} </h3>
+            <div className='system-result grid-system-result'>
+                <h3>Corriente: {(current) ? `${current}A` : null}</h3>
+                {(current) ? <span>Corriente al 125%: {1.25 * current}A </span> : null}
+            </div>
+
 
         </div>
     )
