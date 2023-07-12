@@ -48,7 +48,7 @@
             font-size: 1.2rem;
             font-weight: bold;
             color: rgb(26, 109, 44);
-            text-align: center;
+            // text-align: center;
         }
     }
 }
@@ -60,6 +60,14 @@
 
     @include mediaquery(intermediate) {
         margin-bottom: 1.2rem;
+    }
+
+    &--three-options {
+        flex-direction: column;
+
+        p {
+            align-self: flex-start;
+        }
     }
 
     p {
