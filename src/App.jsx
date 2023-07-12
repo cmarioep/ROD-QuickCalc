@@ -17,6 +17,7 @@ function App() {
         <Route path="/awgbycurrent" element={<AwgByCurrent />} />
         <Route path="/conduitfill" element={<ConduitFill />} />
         <Route path="/getcurrent" element={<GetCurrent />} />
+        <Route path="/getkva" element={<GetCurrent />} />
       </Routes>
     </Layout>
 

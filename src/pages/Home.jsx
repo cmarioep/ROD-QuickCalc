@@ -44,6 +44,12 @@ export const Home = () => {
                         <span>Calcular Corriente</span>
                     </Link>
                 </li>
+                <li className="home__items__item">
+                    <Link to="/getkva">
+                        <CurrentIcon />
+                        <span>Calcular kVA</span>
+                    </Link>
+                </li>
             </ul>
 
         </div>
