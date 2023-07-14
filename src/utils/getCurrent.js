@@ -1,12 +1,3 @@
-const parametros = {
-    loadType: 'kVA',
-    load: '',
-    fp: '0.9',
-    type: 'trifasico',
-    voltage: '208',
-}
-
-
 export const getLoadCurrent = (loadType, load, fp, type, voltage) => {
     voltage = Number(voltage);
 
