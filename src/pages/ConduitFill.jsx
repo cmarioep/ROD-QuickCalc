@@ -1,6 +1,21 @@
 import { useForm } from '../hooks/useForm';
 
+import { WiresOnConduit } from '../components/WiresOnConduit';
+
 import '../styles/pages/ConduitFill.scss';
+
+const wiresInfo = [
+    {
+        awg: "1/0",
+        isolation: "THHN",
+        quantity: 3
+    },
+    {
+        awg: "2",
+        isolation: "THHN",
+        quantity: 3
+    }
+]
 
 export const ConduitFill = () => {
 
@@ -46,7 +61,7 @@ export const ConduitFill = () => {
             </div>
 
             <div className='formulario__container'>
-                <p>Conductores</p>
+                <WiresOnConduit wiresInfo={wiresInfo} />
             </div>
 
         </div>
